@@ -19,7 +19,7 @@ export function LpHeader() {
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <LpLogo height={34} />
+          <LpLogo height={68} />
         </a>
         <span className="lp-header__spacer" />
         <a className="lp-header__phone" href={LP_DATA.phoneHref}>
