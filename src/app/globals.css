@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
+@import "../styles/brand.css";
 
 @theme inline {
   --color-voltimo-primary: #1E3876;

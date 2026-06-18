@@ -1,0 +1,166 @@
+/* Voltimo Design System — component styles.
+   Extracted from handoff JSX useStyles blocks.
+   Imported once from globals.css — no runtime injection. */
+
+/* ======================== BUTTON ======================== */
+.vlt-btn {
+  --_bg: var(--voltimo-primary);
+  --_fg: #fff;
+  --_bg-hover: var(--voltimo-primary-hover);
+  --_border: transparent;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-sans); font-weight: var(--fw-semibold); font-size: var(--fs-button);
+  line-height: 1; text-decoration: none; white-space: nowrap; cursor: pointer;
+  background: var(--_bg); color: var(--_fg);
+  border: 1.5px solid var(--_border); border-radius: var(--radius-md);
+  height: 48px; padding: 0 24px;
+  transition: background var(--transition), color var(--transition), border-color var(--transition), transform var(--transition-fast), box-shadow var(--transition);
+}
+.vlt-btn:hover { background: var(--_bg-hover); }
+.vlt-btn:active { transform: scale(0.98); }
+.vlt-btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.vlt-btn[disabled] { opacity: 0.45; cursor: not-allowed; transform: none; }
+.vlt-btn svg { width: 1.15em; height: 1.15em; }
+
+.vlt-btn--cta { --_bg: var(--voltimo-yellow); --_fg: var(--voltimo-primary); --_bg-hover: var(--voltimo-yellow-hover); border-radius: var(--radius-full); }
+.vlt-btn--secondary { --_bg: var(--voltimo-sky); --_fg: #fff; --_bg-hover: var(--voltimo-sky-hover); }
+.vlt-btn--outline { --_bg: transparent; --_fg: var(--voltimo-primary); --_border: var(--voltimo-primary); --_bg-hover: var(--voltimo-primary-soft); }
+.vlt-btn--ghost { --_bg: transparent; --_fg: var(--voltimo-primary); --_bg-hover: var(--voltimo-primary-soft); }
+
+.vlt-btn--sm { height: 36px; padding: 0 16px; font-size: 14px; }
+.vlt-btn--lg { height: 56px; padding: 0 32px; font-size: 16px; }
+.vlt-btn--pill { border-radius: var(--radius-full); }
+.vlt-btn--block { width: 100%; }
+
+/* ======================== YELLOW LABEL ======================== */
+.vlt-ylabel { display: flex; flex-direction: column; align-items: flex-start; width: max-content; max-width: 100%; }
+.vlt-ylabel__tab {
+  background: var(--voltimo-yellow); color: var(--voltimo-primary);
+  font-family: var(--font-sans); font-weight: var(--fw-bold); letter-spacing: -0.01em;
+  line-height: 1.06; padding: 0.1em 0.42em; width: max-content; max-width: 100%;
+  border-radius: var(--radius-lg);
+}
+.vlt-ylabel--stack .vlt-ylabel__tab:not(:first-child) { border-top-left-radius: 0; }
+.vlt-ylabel--stack .vlt-ylabel__tab:not(:last-child) { border-bottom-left-radius: 0; }
+.vlt-ylabel--sky .vlt-ylabel__tab { background: var(--voltimo-sky); color: #fff; }
+.vlt-ylabel--blue .vlt-ylabel__tab { background: var(--voltimo-primary); color: #fff; }
+.vlt-ylabel--sm .vlt-ylabel__tab { font-size: clamp(1.25rem, 1rem + 1.5vw, 1.75rem); }
+.vlt-ylabel--md .vlt-ylabel__tab { font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.75rem); }
+.vlt-ylabel--lg .vlt-ylabel__tab { font-size: clamp(2.25rem, 1.4rem + 3.6vw, 4rem); }
+
+/* ======================== STAT CIRCLE ======================== */
+.vlt-stat {
+  display: inline-flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; font-family: var(--font-sans); flex: none; border-radius: 50%;
+  width: 132px; height: 132px; padding: 10px;
+}
+.vlt-stat__value { font-weight: var(--fw-bold); font-size: 2.75rem; line-height: 1; }
+.vlt-stat__label { font-weight: var(--fw-semibold); font-size: 0.8125rem; line-height: 1.2; margin-top: 5px; }
+.vlt-stat--blue { background: var(--voltimo-primary); color: #fff; }
+.vlt-stat--blue .vlt-stat__value { color: var(--voltimo-yellow); }
+.vlt-stat--yellow { background: var(--voltimo-yellow); color: var(--voltimo-primary); }
+.vlt-stat--outline { background: transparent; color: var(--voltimo-primary); box-shadow: inset 0 0 0 2px var(--voltimo-primary); }
+.vlt-stat--sm { width: 96px; height: 96px; }
+.vlt-stat--sm .vlt-stat__value { font-size: 1.875rem; }
+.vlt-stat--sm .vlt-stat__label { font-size: 0.6875rem; }
+
+/* ======================== BADGE ======================== */
+.vlt-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-sans); font-weight: var(--fw-semibold); font-size: var(--fs-label);
+  line-height: 1; padding: 7px 13px; border-radius: var(--radius-full);
+  text-transform: uppercase; letter-spacing: var(--ls-label); white-space: nowrap;
+}
+.vlt-badge svg { width: 15px; height: 15px; }
+.vlt-badge--yellow { background: var(--voltimo-yellow); color: var(--voltimo-primary); }
+.vlt-badge--sky { background: var(--voltimo-sky-soft); color: var(--voltimo-primary); }
+.vlt-badge--blue { background: var(--voltimo-primary); color: #fff; }
+.vlt-badge--soft { background: var(--voltimo-primary-soft); color: var(--voltimo-primary); }
+.vlt-badge--outline { background: transparent; color: var(--voltimo-primary); box-shadow: inset 0 0 0 1.5px var(--border-default); }
+.vlt-badge__dot { width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--voltimo-yellow); color: var(--voltimo-primary); margin-left: -5px; }
+.vlt-badge__dot svg { width: 13px; height: 13px; stroke-width: 3.5; }
+
+/* ======================== CARD ======================== */
+.vlt-card {
+  display: flex; flex-direction: column; font-family: var(--font-sans);
+  background: var(--surface-card); color: var(--text-body);
+  border: 1px solid var(--border-default); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm); overflow: hidden;
+  transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+}
+.vlt-card--interactive { cursor: pointer; }
+.vlt-card--interactive:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: #D3DBEA; }
+.vlt-card__media { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.vlt-card__body { padding: var(--space-lg); display: flex; flex-direction: column; gap: 10px; }
+.vlt-card--dark { background: var(--voltimo-primary); color: #fff; border-color: transparent; }
+.vlt-card--dark .vlt-card__body { color: rgba(255,255,255,0.85); }
+.vlt-card--featured { border-color: var(--voltimo-yellow); box-shadow: var(--shadow-md); border-width: 2px; }
+.vlt-card--featured::before { content: ""; display: block; height: 5px; background: var(--voltimo-yellow); }
+
+/* ======================== SECTION ======================== */
+.vlt-section { padding-block: var(--section-pad-y); }
+.vlt-section--light { background: var(--surface-page); color: var(--text-body); }
+.vlt-section--subtle { background: var(--surface-subtle); color: var(--text-body); }
+.vlt-section--dark { background: var(--voltimo-primary); color: #fff; }
+.vlt-section--darker { background: var(--voltimo-near-black); color: #fff; }
+.vlt-section--yellow { background: var(--voltimo-yellow); color: var(--voltimo-primary); }
+.vlt-section--tight { padding-block: var(--space-xl); }
+.vlt-section--flush { padding-block: 0; }
+
+/* ======================== CONTAINER ======================== */
+.vlt-container { width: 100%; max-width: var(--container-max); margin-inline: auto; padding-inline: var(--container-pad); }
+.vlt-container--narrow { max-width: 760px; }
+.vlt-container--wide { max-width: 1440px; }
+
+/* ======================== HEADING ======================== */
+.vlt-heading { font-family: var(--font-sans); font-weight: var(--fw-bold); color: var(--text-heading); line-height: var(--lh-heading); letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.vlt-heading--1 { font-size: var(--fs-h1); }
+.vlt-heading--2 { font-size: var(--fs-h2); }
+.vlt-heading--3 { font-size: var(--fs-h3); }
+.vlt-heading--4 { font-size: var(--fs-h4); font-weight: var(--fw-semibold); }
+.vlt-heading--5 { font-size: var(--fs-h5); font-weight: var(--fw-semibold); }
+.vlt-heading--ondark { color: #fff; }
+
+/* ======================== EYEBROW ======================== */
+.vlt-eyebrow {
+  display: inline-block; font-family: var(--font-sans); font-weight: var(--fw-semibold);
+  font-size: var(--fs-label); text-transform: uppercase; letter-spacing: var(--ls-label);
+  color: var(--voltimo-sky); margin: 0 0 12px;
+}
+.vlt-eyebrow--muted { color: var(--text-muted); }
+.vlt-eyebrow--ondark { color: var(--voltimo-yellow); }
+
+/* ======================== INPUT ======================== */
+.vlt-field { display: flex; flex-direction: column; gap: 7px; font-family: var(--font-sans); }
+.vlt-field__label { font-size: var(--fs-small); font-weight: var(--fw-semibold); color: var(--text-heading); }
+.vlt-field__req { color: var(--voltimo-sky); }
+.vlt-field__hint { font-size: 13px; color: var(--text-muted); }
+.vlt-field__err { font-size: 13px; color: #C0392B; font-weight: 500; }
+.vlt-input {
+  font-family: var(--font-sans); font-size: var(--fs-body); color: var(--text-body);
+  background: var(--surface-input); border: 1.5px solid var(--border-input);
+  border-radius: var(--radius-sm); padding: 0 14px; height: 48px; width: 100%;
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+}
+.vlt-input::placeholder { color: var(--text-muted); }
+.vlt-input:hover { border-color: var(--voltimo-muted); }
+.vlt-input:focus { outline: none; border-color: var(--voltimo-sky); background: #fff; box-shadow: 0 0 0 3px var(--voltimo-sky-soft); }
+.vlt-input[aria-invalid="true"] { border-color: #C0392B; }
+.vlt-input[disabled] { opacity: 0.55; cursor: not-allowed; }
+.vlt-textarea { min-height: 120px; height: auto; padding: 12px 14px; line-height: var(--lh-body); resize: vertical; }
+
+/* ======================== CHECKBOX ======================== */
+.vlt-check { display: inline-flex; align-items: flex-start; gap: 11px; font-family: var(--font-sans); cursor: pointer; color: var(--text-body); }
+.vlt-check input { position: absolute; opacity: 0; width: 0; height: 0; }
+.vlt-check__box {
+  width: 22px; height: 22px; flex: none; margin-top: 1px;
+  border: 1.5px solid var(--border-input); border-radius: 5px; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--transition), border-color var(--transition);
+}
+.vlt-check__box svg { width: 15px; height: 15px; color: var(--voltimo-primary); stroke-width: 3.5; opacity: 0; transform: scale(0.6); transition: opacity var(--transition), transform var(--transition); }
+.vlt-check input:checked + .vlt-check__box { background: var(--voltimo-yellow); border-color: var(--voltimo-yellow); }
+.vlt-check input:checked + .vlt-check__box svg { opacity: 1; transform: scale(1); }
+.vlt-check input:focus-visible + .vlt-check__box { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+.vlt-check__label { font-size: var(--fs-small); line-height: 1.4; }
+.vlt-check--disabled { opacity: 0.5; cursor: not-allowed; }
