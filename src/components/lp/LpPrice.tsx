@@ -4,6 +4,7 @@ import { ArrowRight, PiggyBank, Check } from "lucide-react";
 import { Section, Eyebrow, Heading, Button } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 import { scrollToRegistration } from "@/lib/lp-scroll";
+import { FadeIn } from "./FadeIn";
 
 const INCLUDES = [
   "40 hodin praktického výcviku v dílně",
@@ -16,6 +17,7 @@ export function LpPrice() {
   const { price } = LP_DATA;
   return (
     <Section tone="subtle">
+      <FadeIn>
       <div className="lp-wrap">
         <div className="lp-head lp-head--center">
           <Eyebrow>Cena kurzu</Eyebrow>
@@ -67,6 +69,7 @@ export function LpPrice() {
           </div>
         </div>
       </div>
+      </FadeIn>
     </Section>
   );
 }

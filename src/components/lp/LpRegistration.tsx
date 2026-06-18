@@ -19,6 +19,7 @@ import {
 } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 import { scrollToRegistration } from "@/lib/lp-scroll";
+import { FadeIn } from "./FadeIn";
 
 export function LpRegistration() {
   const [done, setDone] = useState(false);
@@ -40,6 +41,7 @@ export function LpRegistration() {
 
   return (
     <Section tone="light" id="registrace">
+      <FadeIn>
       <div className="lp-wrap">
         <div className="lp-reg">
           <div className="lp-reg__form">
@@ -176,6 +178,7 @@ export function LpRegistration() {
           </div>
         </div>
       </div>
+      </FadeIn>
     </Section>
   );
 }

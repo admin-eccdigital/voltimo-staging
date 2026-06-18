@@ -4,6 +4,7 @@ import { ArrowRight, Flame, Users, CalendarClock, Bell } from "lucide-react";
 import { Section, Eyebrow, Heading, Button } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 import { scrollToRegistration } from "@/lib/lp-scroll";
+import { FadeIn } from "./FadeIn";
 
 function pickTerm(title: string) {
   window.dispatchEvent(new CustomEvent("lp-pick-term", { detail: title }));
@@ -13,6 +14,7 @@ function pickTerm(title: string) {
 export function LpDates() {
   return (
     <Section tone="light">
+      <FadeIn>
       <div className="lp-wrap">
         <div className="lp-head">
           <Eyebrow>Nejbližší termíny</Eyebrow>
@@ -78,6 +80,7 @@ export function LpDates() {
           </div>
         </div>
       </div>
+      </FadeIn>
     </Section>
   );
 }

@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Section, Eyebrow, Heading } from "@/components/brand";
+import { FadeIn } from "./FadeIn";
 
 export function LpTeacher() {
   return (
     <Section tone="light">
+      <FadeIn>
       <div className="lp-wrap">
         <div className="lp-why">
           <div className="lp-why__media">
@@ -61,6 +63,7 @@ export function LpTeacher() {
           </div>
         </div>
       </div>
+      </FadeIn>
     </Section>
   );
 }

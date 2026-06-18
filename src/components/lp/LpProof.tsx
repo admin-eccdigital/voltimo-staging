@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Play } from "lucide-react";
 import { Section, Eyebrow, Heading } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
+import { FadeIn } from "./FadeIn";
 
 const VIDEOS = [
   {
@@ -26,6 +27,7 @@ export function LpProof() {
   const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   return (
     <Section tone="light">
+      <FadeIn>
       <div className="lp-wrap">
         <div className="lp-head lp-head--center">
           <Eyebrow>Důkaz, ne sliby</Eyebrow>
@@ -74,6 +76,7 @@ export function LpProof() {
           ))}
         </div>
       </div>
+      </FadeIn>
     </Section>
   );
 }

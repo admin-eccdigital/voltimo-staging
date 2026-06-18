@@ -1,5 +1,6 @@
 import { Check, CheckCircle, Award } from "lucide-react";
 import { Section, Eyebrow, Heading } from "@/components/brand";
+import { FadeIn } from "./FadeIn";
 
 const PKS = [
   "Montér elektrických instalací",
@@ -12,6 +13,7 @@ const PKS = [
 export function LpOutcome() {
   return (
     <Section tone="light">
+      <FadeIn>
       <div className="lp-wrap">
         <div className="lp-outcome">
           <div>
@@ -70,6 +72,7 @@ export function LpOutcome() {
           </div>
         </div>
       </div>
+      </FadeIn>
     </Section>
   );
 }

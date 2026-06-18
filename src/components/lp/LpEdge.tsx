@@ -1,9 +1,11 @@
 import { Zap, CheckCheck } from "lucide-react";
 import { Section, Eyebrow, Heading } from "@/components/brand";
+import { FadeIn } from "./FadeIn";
 
 export function LpEdge() {
   return (
     <Section tone="subtle">
+      <FadeIn>
       <div className="lp-wrap">
         <div className="lp-head">
           <Eyebrow>Už něco umíte?</Eyebrow>
@@ -44,6 +46,7 @@ export function LpEdge() {
           </div>
         </div>
       </div>
+      </FadeIn>
     </Section>
   );
 }

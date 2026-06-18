@@ -1,9 +1,11 @@
 import { Hammer, ClipboardCheck, MapPin } from "lucide-react";
 import { Section, Eyebrow, Heading } from "@/components/brand";
+import { FadeIn } from "./FadeIn";
 
 export function LpHow() {
   return (
     <Section tone="dark">
+      <FadeIn>
       <div className="lp-wrap">
         <div className="lp-head">
           <Eyebrow tone="ondark">Jak to reálně běží</Eyebrow>
@@ -77,6 +79,7 @@ export function LpHow() {
           </p>
         </div>
       </div>
+      </FadeIn>
     </Section>
   );
 }

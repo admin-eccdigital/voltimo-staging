@@ -1,6 +1,7 @@
 import { type ReactNode } from "react";
 import { HelpCircle, ShieldCheck } from "lucide-react";
 import { Section, Eyebrow, Heading } from "@/components/brand";
+import { FadeIn } from "./FadeIn";
 
 interface Fear {
   q: string;
@@ -46,6 +47,7 @@ const FEARS: Fear[] = [
 export function LpFears() {
   return (
     <Section tone="subtle">
+      <FadeIn>
       <div className="lp-wrap">
         <div className="lp-head">
           <Eyebrow>Bez obav</Eyebrow>
@@ -69,6 +71,7 @@ export function LpFears() {
           ))}
         </div>
       </div>
+      </FadeIn>
     </Section>
   );
 }

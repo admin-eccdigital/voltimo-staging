@@ -1,5 +1,6 @@
 import { Check, X, Wrench } from "lucide-react";
 import { Section, Eyebrow, Heading } from "@/components/brand";
+import { FadeIn } from "./FadeIn";
 
 const YES = [
   "Zedník, údržbář, OSVČ nebo hodinový manžel, co elektriku reálně dělá",
@@ -16,6 +17,7 @@ const NO = [
 export function LpAudience() {
   return (
     <Section tone="subtle">
+      <FadeIn>
       <div className="lp-wrap">
         <div className="lp-head">
           <Eyebrow>Pro koho to je</Eyebrow>
@@ -73,6 +75,7 @@ export function LpAudience() {
           </p>
         </div>
       </div>
+      </FadeIn>
     </Section>
   );
 }

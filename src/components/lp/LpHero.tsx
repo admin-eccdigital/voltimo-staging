@@ -4,6 +4,7 @@ import { MapPin, ArrowRight } from "lucide-react";
 import { Button, YellowLabel, StatCircle } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 import { scrollToRegistration } from "@/lib/lp-scroll";
+import { HeroStagger, HeroItem } from "./FadeIn";
 
 export function LpHero() {
   return (
@@ -15,52 +16,66 @@ export function LpHero() {
         }}
       />
       <div className="lp-hero__overlay" />
-      <div className="lp-hero__inner">
-        <span className="lp-hero__eyebrow">
-          <MapPin /> Prezenční výcvik v Přešticích · Plzeňsko
-        </span>
-
-        <span className="lp-hero__tabs">
-          <YellowLabel lines={["Ne škola.", "Výcvik."]} size="lg" />
-        </span>
-
-        <p className="lp-hero__claim">Pro šikovné lidi, kteří chtějí papír.</p>
-
-        <p className="lp-hero__lead">
-          Úplná kvalifikace Elektrikář za 10 dní výcviku. Žádné měsíce u videí
-          a teorie – jen praxe, zkouška §6 a státní osvědčení. Nemusíte mít
-          školu, stačí mít ruce a chuť.
-        </p>
-
-        <div className="lp-hero__cta">
-          <Button
-            variant="cta"
-            size="lg"
-            icon={<ArrowRight />}
-            onClick={scrollToRegistration}
-          >
-            Rezervovat termín
-          </Button>
-          <span className="lp-hero__note">
-            Nezávazně online ·{" "}
-            <strong>vše vyřídíte bez telefonu</strong>
+      <HeroStagger className="lp-hero__inner">
+        <HeroItem>
+          <span className="lp-hero__eyebrow">
+            <MapPin /> Prezenční výcvik v Přešticích · Plzeňsko
           </span>
-        </div>
+        </HeroItem>
 
-        <div className="lp-urgency">
-          <span className="lp-urgency__dot" />
-          <span>Ušetříte {LP_DATA.price.discount.toLocaleString("cs-CZ")} Kč</span>
-          <span className="lp-urgency__chip">
-            při registraci do {LP_DATA.price.deadline}
+        <HeroItem>
+          <span className="lp-hero__tabs">
+            <YellowLabel lines={["Ne škola.", "Výcvik."]} size="lg" />
           </span>
-        </div>
+        </HeroItem>
 
-        <div className="lp-hero__trust">
-          <StatCircle value="10" label="dní do osvědčení" variant="yellow" />
-          <StatCircle value="5" label="profesních kvalifikací" variant="blue" />
-          <StatCircle value="96" label="% úspěšnost u zkoušky" variant="outline" />
-        </div>
-      </div>
+        <HeroItem>
+          <p className="lp-hero__claim">Pro šikovné lidi, kteří chtějí papír.</p>
+        </HeroItem>
+
+        <HeroItem>
+          <p className="lp-hero__lead">
+            Úplná kvalifikace Elektrikář za 10 dní výcviku. Žádné měsíce u videí
+            a teorie – jen praxe, zkouška §6 a státní osvědčení. Nemusíte mít
+            školu, stačí mít ruce a chuť.
+          </p>
+        </HeroItem>
+
+        <HeroItem>
+          <div className="lp-hero__cta">
+            <Button
+              variant="cta"
+              size="lg"
+              icon={<ArrowRight />}
+              onClick={scrollToRegistration}
+            >
+              Rezervovat termín
+            </Button>
+            <span className="lp-hero__note">
+              Nezávazně online ·{" "}
+              <strong>vše vyřídíte bez telefonu</strong>
+            </span>
+          </div>
+        </HeroItem>
+
+        <HeroItem>
+          <div className="lp-urgency">
+            <span className="lp-urgency__dot" />
+            <span>Ušetříte {LP_DATA.price.discount.toLocaleString("cs-CZ")} Kč</span>
+            <span className="lp-urgency__chip">
+              při registraci do {LP_DATA.price.deadline}
+            </span>
+          </div>
+        </HeroItem>
+
+        <HeroItem>
+          <div className="lp-hero__trust">
+            <StatCircle value="10" label="dní do osvědčení" variant="yellow" />
+            <StatCircle value="5" label="profesních kvalifikací" variant="blue" />
+            <StatCircle value="96" label="% úspěšnost u zkoušky" variant="outline" />
+          </div>
+        </HeroItem>
+      </HeroStagger>
     </section>
   );
 }
