@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+@theme inline {
+  --color-voltimo-primary: #1E3876;
+  --color-voltimo-primary-hover: #18305F;
+  --color-voltimo-primary-soft: #EAEEF6;
+  --color-voltimo-yellow: #F9DE74;
+  --color-voltimo-yellow-hover: #F5D250;
+  --color-voltimo-yellow-soft: #FDF3CF;
+  --color-voltimo-sky: #4FAAE7;
+  --color-voltimo-sky-hover: #3D97D6;
+  --color-voltimo-sky-soft: #E4F1FB;
+  --color-voltimo-muted: #5A6580;
+  --color-voltimo-form-gray: #F4F5F7;
+  --color-voltimo-form-border: #A7B4C8;
+  --color-voltimo-near-black: #0F1729;
+  --color-voltimo-border: #E2E7F0;
+
+  --font-sans: var(--font-source-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-voltimo-sm: 6px;
+  --radius-voltimo-md: 10px;
+  --radius-voltimo-lg: 14px;
+  --radius-voltimo-xl: 20px;
+
+  --shadow-voltimo-sm: 0 2px 12px rgba(30, 56, 118, 0.06);
+  --shadow-voltimo-md: 0 8px 24px rgba(30, 56, 118, 0.12);
+  --shadow-voltimo-lg: 0 16px 48px rgba(30, 56, 118, 0.16);
+  --shadow-voltimo-cta: 0 6px 0 rgba(30, 56, 118, 0.12);
+
+  --ease-voltimo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--text-body);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
