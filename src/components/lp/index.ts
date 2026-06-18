@@ -1,0 +1,15 @@
+export { LpLogo } from "./LpLogo";
+export { LpHeader } from "./LpHeader";
+export { LpSticky } from "./LpSticky";
+export { LpHero } from "./LpHero";
+export { LpOutcome } from "./LpOutcome";
+export { LpAudience } from "./LpAudience";
+export { LpTeacher } from "./LpTeacher";
+export { LpHow } from "./LpHow";
+export { LpDates } from "./LpDates";
+export { LpPrice } from "./LpPrice";
+export { LpFears } from "./LpFears";
+export { LpProof } from "./LpProof";
+export { LpEdge } from "./LpEdge";
+export { LpRegistration } from "./LpRegistration";
+export { LpFooter } from "./LpFooter";

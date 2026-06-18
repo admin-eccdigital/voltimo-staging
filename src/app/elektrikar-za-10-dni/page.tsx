@@ -1,10 +1,46 @@
-export default function ElektrikarZa10DniPage() {
+import type { Metadata } from "next";
+import {
+  LpHeader,
+  LpSticky,
+  LpHero,
+  LpOutcome,
+  LpAudience,
+  LpTeacher,
+  LpHow,
+  LpDates,
+  LpPrice,
+  LpFears,
+  LpProof,
+  LpEdge,
+  LpRegistration,
+  LpFooter,
+} from "@/components/lp";
+
+export const metadata: Metadata = {
+  title: "Elektrikář za 10 dní — Voltimo",
+  description:
+    "Úplná kvalifikace Elektrikář za 10 dní výcviku. Praxe, zkouška §6 a státní osvědčení. Prezenční výcvik v Přešticích.",
+};
+
+export default function ElektrikarPage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
-      <h1 className="text-2xl font-bold text-voltimo-primary">
-        Elektrikář za 10 dní
-      </h1>
-      <p className="text-voltimo-muted">LP se připravuje — Fáze B+C.</p>
-    </main>
+    <>
+      <LpHeader />
+      <main>
+        <LpHero />
+        <LpOutcome />
+        <LpAudience />
+        <LpTeacher />
+        <LpHow />
+        <LpDates />
+        <LpPrice />
+        <LpFears />
+        <LpProof />
+        <LpEdge />
+        <LpRegistration />
+      </main>
+      <LpFooter />
+      <LpSticky />
+    </>
   );
 }
