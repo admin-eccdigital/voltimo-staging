@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import {
-  LpHeader,
   LpSticky,
   LpHero,
   LpOutcome,
@@ -13,7 +12,6 @@ import {
   LpProof,
   LpEdge,
   LpRegistration,
-  LpFooter,
 } from "@/components/lp";
 
 export const metadata: Metadata = {
@@ -25,27 +23,17 @@ export const metadata: Metadata = {
 export default function ElektrikarPage() {
   return (
     <>
-      <a
-        href="#hlavni-obsah"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-voltimo-yellow focus:text-voltimo-primary focus:px-4 focus:py-2 focus:rounded-voltimo-md focus:font-semibold"
-      >
-        Přeskočit na obsah
-      </a>
-      <LpHeader />
-      <main id="hlavni-obsah">
-        <LpHero />
-        <LpOutcome />
-        <LpAudience />
-        <LpTeacher />
-        <LpHow />
-        <LpDates />
-        <LpPrice />
-        <LpFears />
-        <LpProof />
-        <LpEdge />
-        <LpRegistration />
-      </main>
-      <LpFooter />
+      <LpHero />
+      <LpOutcome />
+      <LpAudience />
+      <LpTeacher />
+      <LpHow />
+      <LpDates />
+      <LpPrice />
+      <LpFears />
+      <LpProof />
+      <LpEdge />
+      <LpRegistration />
       <LpSticky />
     </>
   );

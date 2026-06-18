@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { SiteHeader, SiteFooter } from "@/components/site";
 import "./globals.css";
 
 const sourceSans = localFont({
@@ -34,7 +35,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="cs" className={`${sourceSans.variable} antialiased`}>
-      <body>{children}</body>
+      <body>
+        <a
+          href="#hlavni-obsah"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-voltimo-yellow focus:text-voltimo-primary focus:px-4 focus:py-2 focus:rounded-voltimo-md focus:font-semibold"
+        >
+          Přeskočit na obsah
+        </a>
+        <SiteHeader />
+        <main id="hlavni-obsah">{children}</main>
+        <SiteFooter />
+      </body>
     </html>
   );
 }
