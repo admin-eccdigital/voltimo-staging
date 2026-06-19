@@ -4,6 +4,7 @@
 @import "../styles/site.css";
 @import "../styles/lp.css";
 @import "../styles/onas.css";
+@import "../styles/homepage.css";
 
 @theme inline {
   --color-voltimo-primary: #1E3876;
