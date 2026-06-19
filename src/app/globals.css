@@ -5,6 +5,7 @@
 @import "../styles/lp.css";
 @import "../styles/onas.css";
 @import "../styles/homepage.css";
+@import "../styles/kontakt.css";
 
 @theme inline {
   --color-voltimo-primary: #1E3876;
