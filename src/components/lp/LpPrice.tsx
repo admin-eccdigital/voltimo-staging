@@ -31,7 +31,9 @@ export function LpPrice() {
           <div className="lp-price__card">
             <div className="lp-price__head">
               <span className="lp-price__variant">10denní kurz Elektrikář</span>
-              <span className="lp-price__disc">Akční sleva 20 %</span>
+              <span className="lp-price__disc">
+                Akční sleva 20 % · platí pouze do {price.deadline}
+              </span>
             </div>
             <div className="lp-price__amounts">
               <span className="lp-price__old">
