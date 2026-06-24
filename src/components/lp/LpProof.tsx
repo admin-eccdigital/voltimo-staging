@@ -11,7 +11,7 @@ const VIDEOS = [
   {
     heading: "Změna oboru – i kvůli AI",
     quote:
-      "Přemýšlel jsem o změně oboru, i kvůli AI – a elektriku snad nahradit nemůže. Za pět týdnů jsem si znalosti ucelil; po malých kouscích z internetu to není ono. S přístupem pana lektora zkouška nebyla těžká.",
+      "Přemýšlel jsem o změně oboru, i kvůli AI – a elektriku snad nahradit nemůže. Znalosti jsem si konečně ucelil v kuse; po malých kouscích z internetu to není ono. S přístupem pana lektora zkouška nebyla těžká.",
     video: "/videos/videorecenze-2.mp4",
     poster: "/videos/videorecenze-2.jpg",
     len: "1:04",
@@ -19,7 +19,7 @@ const VIDEOS = [
   {
     heading: "Chtěl jsem elektrice rozumět sám",
     quote:
-      "Zaujala mě elektrika – je to kombinace, zapojíte hlavu i zručnost. Díky přípravě během těch pěti týdnů šla zkouška složit jednodušeji, než jsem čekal. A ideální je, že si to, co si přečtete, hned vyzkoušíte v praxi na panelech.",
+      "Zaujala mě elektrika – je to kombinace, zapojíte hlavu i zručnost. Díky přípravě šla zkouška složit jednodušeji, než jsem čekal. A ideální je, že si to, co si přečtete, hned vyzkoušíte v praxi na panelech.",
     video: "/videos/videorecenze-1.mp4",
     poster: "/videos/videorecenze-1.jpg",
     len: "1:06",
