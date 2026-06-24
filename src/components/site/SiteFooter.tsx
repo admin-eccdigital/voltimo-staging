@@ -57,12 +57,8 @@ export function SiteFooter() {
             © 2026 Voltimo · Středisko profesního vzdělávání · Přeštice
           </span>
           <span className="site-footer__legal-links">
-            <a href={`${basePath}/docs/gdpr.pdf`} target="_blank" rel="noopener noreferrer">
-              Zásady ochrany osobních údajů
-            </a>
-            <a href={`${basePath}/docs/vop.pdf`} target="_blank" rel="noopener noreferrer">
-              Všeobecné obchodní podmínky
-            </a>
+            <a href={`${basePath}/gdpr/`}>Zásady ochrany osobních údajů</a>
+            <a href={`${basePath}/vop/`}>Všeobecné obchodní podmínky</a>
           </span>
         </div>
       </div>

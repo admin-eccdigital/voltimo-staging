@@ -1,0 +1,68 @@
+/* Legal pages — VOP, GDPR */
+.legal-hero {
+  background: var(--voltimo-primary);
+  color: var(--text-on-dark);
+  padding: clamp(3rem, 2rem + 5vw, 5.5rem) var(--container-pad)
+    clamp(2.25rem, 1.75rem + 2.5vw, 3.5rem);
+}
+.legal-hero__inner { max-width: 820px; margin: 0 auto; }
+.legal-hero__eyebrow {
+  display: inline-block;
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--voltimo-yellow);
+  margin-bottom: 14px;
+}
+.legal-hero h1 {
+  margin: 0;
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  line-height: 1.12;
+  color: #fff;
+}
+.legal-hero__meta {
+  margin: 14px 0 0;
+  font-size: var(--fs-small);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.legal {
+  padding: clamp(2.5rem, 2rem + 3vw, 4.5rem) var(--container-pad)
+    clamp(3rem, 2rem + 4vw, 6rem);
+}
+.legal__inner { max-width: 820px; margin: 0 auto; color: var(--text-body); }
+.legal__intro {
+  font-size: var(--fs-h4);
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-lg);
+}
+.legal__section { margin-top: var(--space-xl); }
+.legal__section > h2 {
+  margin: 0 0 var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-default);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--text-heading);
+}
+.legal__section h3 {
+  margin: var(--space-lg) 0 var(--space-sm);
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semibold);
+  color: var(--text-heading);
+}
+.legal p { margin: 0 0 var(--space-md); line-height: 1.65; }
+.legal ul { margin: 0 0 var(--space-md); padding-left: 1.25rem; }
+.legal li { margin-bottom: 7px; line-height: 1.6; }
+.legal a { color: var(--text-link-accent); text-decoration: underline; }
+.legal strong { font-weight: var(--fw-semibold); color: var(--text-heading); }
+.legal__updated {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-default);
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+}
