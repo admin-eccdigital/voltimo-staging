@@ -9,22 +9,20 @@ import { FadeIn } from "./FadeIn";
 
 const VIDEOS = [
   {
-    name: "[ Jméno absolventa ]",
-    role: "Dnes elektrikář na živnost",
+    heading: "Změna oboru – i kvůli AI",
     quote:
-      "Dělal jsem u elektriky roky bez papíru. Za 10 dní jsem měl osvědčení.",
-    video: "/videos/videorecenze-1.mp4",
-    poster: "/videos/videorecenze-1.jpg",
-    len: "1:06",
-  },
-  {
-    name: "[ Jméno absolventa ]",
-    role: "Montér FV → kvalifikovaný elektrikář",
-    quote:
-      "Bál jsem se zkoušky zbytečně. Příprava seděla přesně na to, co po mě chtěli.",
+      "Přemýšlel jsem o změně oboru, i kvůli AI – a elektriku snad nahradit nemůže. Za pět týdnů jsem si znalosti ucelil; po malých kouscích z internetu to není ono. S přístupem pana lektora zkouška nebyla těžká.",
     video: "/videos/videorecenze-2.mp4",
     poster: "/videos/videorecenze-2.jpg",
     len: "1:04",
+  },
+  {
+    heading: "Chtěl jsem elektrice rozumět sám",
+    quote:
+      "Zaujala mě elektrika – je to kombinace, zapojíte hlavu i zručnost. Díky přípravě během těch pěti týdnů šla zkouška složit jednodušeji, než jsem čekal. A ideální je, že si to, co si přečtete, hned vyzkoušíte v praxi na panelech.",
+    video: "/videos/videorecenze-1.mp4",
+    poster: "/videos/videorecenze-1.jpg",
+    len: "1:06",
   },
 ];
 
@@ -50,7 +48,7 @@ function VideoCard({ v }: { v: (typeof VIDEOS)[number] }) {
           <>
             <Image
               src={`${base}${v.poster}`}
-              alt={`Videoreference – ${v.name}`}
+              alt={`Videoreference – ${v.heading}`}
               fill
               sizes="(max-width: 920px) 100vw, 50vw"
               style={{ objectFit: "cover" }}
@@ -58,7 +56,7 @@ function VideoCard({ v }: { v: (typeof VIDEOS)[number] }) {
             <button
               type="button"
               className="lp-video__play"
-              aria-label={`Přehrát videoreferenci – ${v.name}`}
+              aria-label={`Přehrát videoreferenci – ${v.heading}`}
             >
               <Play />
             </button>
@@ -67,8 +65,7 @@ function VideoCard({ v }: { v: (typeof VIDEOS)[number] }) {
         )}
       </div>
       <div className="lp-video__cap">
-        <strong>{v.name}</strong>
-        <span>{v.role}</span>
+        <strong>{v.heading}</strong>
         <p>„{v.quote}"</p>
       </div>
     </div>
