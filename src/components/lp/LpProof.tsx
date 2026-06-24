@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import { Play } from "lucide-react";
 import { Section, Eyebrow, Heading } from "@/components/brand";
@@ -10,21 +13,69 @@ const VIDEOS = [
     role: "Dnes elektrikář na živnost",
     quote:
       "Dělal jsem u elektriky roky bez papíru. Za 10 dní jsem měl osvědčení.",
-    photo: "/photos/03-elektrikar-pri-praci-2.jpg",
-    len: "2:14",
+    video: "/videos/videorecenze-1.mp4",
+    poster: "/videos/videorecenze-1.jpg",
+    len: "1:06",
   },
   {
     name: "[ Jméno absolventa ]",
     role: "Montér FV → kvalifikovaný elektrikář",
     quote:
       "Bál jsem se zkoušky zbytečně. Příprava seděla přesně na to, co po mě chtěli.",
-    photo: "/photos/06-foto-landscape-doplnek.jpg",
-    len: "1:48",
+    video: "/videos/videorecenze-2.mp4",
+    poster: "/videos/videorecenze-2.jpg",
+    len: "1:04",
   },
 ];
 
-export function LpProof() {
+function VideoCard({ v }: { v: (typeof VIDEOS)[number] }) {
   const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const [playing, setPlaying] = useState(false);
+
+  return (
+    <div className="lp-video">
+      <div
+        className={`lp-video__thumb${playing ? " is-playing" : ""}`}
+        onClick={() => !playing && setPlaying(true)}
+      >
+        {playing ? (
+          <video
+            src={`${base}${v.video}`}
+            poster={`${base}${v.poster}`}
+            controls
+            autoPlay
+            playsInline
+          />
+        ) : (
+          <>
+            <Image
+              src={`${base}${v.poster}`}
+              alt={`Videoreference – ${v.name}`}
+              fill
+              sizes="(max-width: 920px) 100vw, 50vw"
+              style={{ objectFit: "cover" }}
+            />
+            <button
+              type="button"
+              className="lp-video__play"
+              aria-label={`Přehrát videoreferenci – ${v.name}`}
+            >
+              <Play />
+            </button>
+            <span className="lp-video__badge">Videoreference · {v.len}</span>
+          </>
+        )}
+      </div>
+      <div className="lp-video__cap">
+        <strong>{v.name}</strong>
+        <span>{v.role}</span>
+        <p>„{v.quote}"</p>
+      </div>
+    </div>
+  );
+}
+
+export function LpProof() {
   return (
     <Section tone="light">
       <FadeIn>
@@ -51,28 +102,7 @@ export function LpProof() {
 
         <div className="lp-videos">
           {VIDEOS.map((v, i) => (
-            <div className="lp-video" key={i}>
-              <div className="lp-video__thumb">
-                <Image
-                  src={`${base}${v.photo}`}
-                  alt={`Videoreference – ${v.name}`}
-                  fill
-                  sizes="(max-width: 920px) 100vw, 50vw"
-                  style={{ objectFit: "cover" }}
-                />
-                <span className="lp-video__play">
-                  <Play />
-                </span>
-                <span className="lp-video__badge">
-                  Videoreference · {v.len}
-                </span>
-              </div>
-              <div className="lp-video__cap">
-                <strong>{v.name}</strong>
-                <span>{v.role}</span>
-                <p>„{v.quote}"</p>
-              </div>
-            </div>
+            <VideoCard v={v} key={i} />
           ))}
         </div>
       </div>
