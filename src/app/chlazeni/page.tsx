@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowRight, Award, BadgeCheck, Briefcase, Check, CheckCircle2, ClipboardCheck,
-  BadgePercent, HardHat, Hammer, Info, Scissors, Signpost, Snowflake, Timer, Users, Wrench,
+  BadgePercent, Flame, HardHat, Hammer, Info, Scissors, Signpost, Snowflake, Timer, Users, Wrench,
 } from "lucide-react";
 import { Button, Eyebrow, Heading, StatCircle, YellowLabel } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
@@ -71,6 +71,11 @@ const FAQ = [
   { q: "Co když zkoušku neudělám napoprvé?", a: "Můžete ji opakovat. Naše příprava ale stojí přesně na tom, abyste prošli napoprvé." },
   { q: "Kde to probíhá?", a: "V Přešticích, v naší učebně a praktických dílnách. Prezenčně. Na řemeslo si musíte sáhnout." },
   { q: "Co potřebuji s sebou?", a: "Platný občanský průkaz a lékařské potvrzení o zdravotní způsobilosti (formulář pošleme po přihlášce). Pracovní oblečení a obuv." },
+] as const;
+
+const CHL_DATES = [
+  { d: "7", m: "ZÁŘ", title: "Zářijový běh", range: "Příprava 7. – 8. 9. · zkoušky 9. – 10. 9. 2026", cap: "Poslední 3 místa", low: true, featured: true },
+  { d: "6", m: "ŘÍJ", title: "Říjnový běh", range: "Příprava 6. – 7. 10. · zkoušky 8. – 9. 10. 2026", cap: "Zbývá 5 míst", low: false, featured: false },
 ] as const;
 
 export default function ChlazeniPage() {
@@ -396,6 +401,52 @@ export default function ChlazeniPage() {
                 </p>
               </div>
             </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* TERMÍNY */}
+      <section className="vlt-section vlt-section--light" id="terminy">
+        <div className="lp-wrap">
+          <FadeIn>
+            <div className="lp-head">
+              <Eyebrow>Nejbližší termíny</Eyebrow>
+              <Heading level={2}>Vyberte si běh a držte si místo.</Heading>
+              <p className="lp-head__sub">
+                Všechny běhy probíhají prezenčně v Přešticích. Kapacita je
+                omezená. Poptávka je nezávazná, ozveme se vám s detaily.
+              </p>
+            </div>
+          </FadeIn>
+          <div className="lp-dates">
+            {CHL_DATES.map((t) => (
+              <div
+                className={`lp-date${t.featured ? " lp-date--featured" : ""}`}
+                key={t.title}
+              >
+                <div className="lp-date__cal">
+                  <strong>{t.d}</strong>
+                  <small>{t.m}</small>
+                </div>
+                <div className="lp-date__info">
+                  <strong>{t.title}</strong>
+                  <span>{t.range}</span>
+                </div>
+                <span
+                  className={`lp-date__cap ${t.low ? "lp-date__cap--low" : "lp-date__cap--ok"}`}
+                >
+                  {t.low ? <Flame /> : <Users />}
+                  {t.cap}
+                </span>
+                <Button
+                  variant={t.featured ? "cta" : "outline"}
+                  icon={<ArrowRight />}
+                  href="#poptavka"
+                >
+                  Chci tento termín
+                </Button>
+              </div>
+            ))}
           </div>
         </div>
       </section>
