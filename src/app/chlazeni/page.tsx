@@ -58,10 +58,10 @@ const REVS = [
 ] as const;
 
 const WHY = [
-  { t: "Lidský přístup", d: "Nevyžadujeme zdlouhavé studium ani „razítko pro razítko“. Vysvětlíme vám, co a proč děláte. Krok za krokem." },
-  { t: "Praxe bez obalu", d: "U nás se neučíte zbytečnosti. Všechno, co děláte, má přímý dopad na reálné zakázky. Zapojení, měření, řešení." },
-  { t: "Připravíme vás na 100 %", d: "Zkouška není strašák, když víte, co čekat. Dostanete jasné zadání, praktický trénink i nácvik nanečisto." },
-  { t: "Učíme podle NSK", d: "Kurzy připravujeme přesně podle Národní soustavy kvalifikací. Žádné improvizace, žádná překvapení." },
+  { t: "Lidský přístup", d: "Bez zdlouhavého studia. Vysvětlíme vám, co děláte a proč. Krok za krokem." },
+  { t: "Jen to, co použijete", d: "Neučíme zbytečnosti. Co si osaháte u nás, děláte pak i na zakázce." },
+  { t: "Připravíme vás na 100 %", d: "Zkouška není strašák, když víte, co čekat. Projdete si ji nanečisto, s jasným zadáním a zpětnou vazbou." },
+  { t: "Učíme podle NSK", d: "Připraveno přesně podle Národní soustavy kvalifikací. U zkoušky vás nic nepřekvapí." },
 ] as const;
 
 const FAQ = [
@@ -168,7 +168,7 @@ export default function ChlazeniPage() {
             <div>
               <div className="lp-head">
                 <Eyebrow>Proč to řešit</Eyebrow>
-                <Heading level={2}>Pracujete s chlazením roky. Ale na papíře nikde.</Heading>
+                <Heading level={2}>Chlazení děláte roky. Papír na to vám ale chybí.</Heading>
               </div>
               <p style={{ marginTop: 20 }}>
                 Montujete klimatizace, servisujete tepelná čerpadla, opravujete chladicí jednotky.
