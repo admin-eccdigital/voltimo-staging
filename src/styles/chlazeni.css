@@ -11,7 +11,7 @@
 
 /* ---- pásek 4 výhod ---- */
 .chl-quick{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-default)}
-.chl-quick__item{background:#fff;display:flex;align-items:center;gap:12px;padding:20px 24px;font-weight:var(--fw-semibold);font-size:15px;color:var(--voltimo-primary)}
+.chl-quick__item{background:#fff;display:flex;align-items:center;justify-content:center;gap:12px;padding:20px 24px;font-weight:var(--fw-semibold);font-size:15px;color:var(--voltimo-primary)}
 .chl-quick__ic{flex:none;width:34px;height:34px;border-radius:50%;background:var(--voltimo-yellow);color:var(--voltimo-primary);display:inline-flex;align-items:center;justify-content:center}
 .chl-quick__ic svg{width:18px;height:18px}
 @media (max-width:900px){.chl-quick{grid-template-columns:repeat(2,1fr)}}

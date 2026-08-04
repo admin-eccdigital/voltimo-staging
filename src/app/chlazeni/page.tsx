@@ -80,7 +80,7 @@ export default function ChlazeniPage() {
       <section className="lp-hero">
         <div
           className="lp-hero__media"
-          style={{ backgroundImage: `url('${basePath}/photos/chl-hero-detektor.jpg')`, backgroundPosition: "center 45%" }}
+          style={{ backgroundImage: `url('${basePath}/photos/chl-hero-detektor.jpg')`, backgroundPosition: "right 20%" }}
         />
         <div className="lp-hero__overlay" />
         <div className="lp-hero__inner">
