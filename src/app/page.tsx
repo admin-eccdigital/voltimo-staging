@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowRight, GraduationCap, Check } from "lucide-react";
+import { ArrowRight, GraduationCap } from "lucide-react";
 import { Button, Eyebrow, Heading } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
 
@@ -109,7 +109,7 @@ export default function HomePage() {
                 variant="cta"
                 size="lg"
                 icon={<ArrowRight />}
-                href={`${basePath}/elektrikar-za-10-dni/`}
+                href="#kurzy"
               >
                 Vybrat kurz
               </Button>
@@ -132,59 +132,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HLAVNÍ PROGRAM */}
-      <section className="hp-program">
-        <div className="hp-program__inner">
+      {/* VYBERTE SI OBOR */}
+      <section className="hp-choose" id="kurzy">
+        <div className="hp-choose__inner">
           <FadeIn>
-            <div className="hp-program__card">
-              <div className="hp-program__photo">
-                <Image
-                  src={`${basePath}/photos/homepage/kurz-rozvadec.jpg`}
-                  alt="Praktický výcvik na rozvaděči"
-                  width={600}
-                  height={500}
-                  style={{
-                    objectFit: "cover",
-                    objectPosition: "center 40%",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                />
-                <div className="hp-program__stat">
-                  <span className="hp-program__stat-value">10</span>
-                  <span className="hp-program__stat-label">
-                    dní do osvědčení
-                  </span>
-                </div>
-              </div>
-              <div className="hp-program__content">
-                <Eyebrow tone="ondark">Náš hlavní program</Eyebrow>
-                <h2 className="hp-program__h2">Elektrikář za 10 dní</h2>
-                <p className="hp-program__desc">
-                  Úplná kvalifikace za 10 dní výcviku. Žádné měsíce u videí.
-                  Praxe, zkouška §6, státní osvědčení.
-                </p>
-                <div className="hp-program__features">
-                  <span className="hp-program__feature">
-                    <Check size={16} /> 40 hodin praxe
-                  </span>
-                  <span className="hp-program__feature">
-                    <Check size={16} /> Zkouška §6
-                  </span>
-                  <span className="hp-program__feature">
-                    <Check size={16} /> Státní osvědčení
-                  </span>
-                </div>
-                <Button
-                  variant="cta"
-                  size="lg"
-                  icon={<ArrowRight />}
-                  href={`${basePath}/elektrikar-za-10-dni/`}
-                >
-                  Zjistit více
-                </Button>
-              </div>
+            <div className="hp-choose__head">
+              <Eyebrow>Vyberte si obor</Eyebrow>
+              <Heading as="h2">Co chcete dělat?</Heading>
             </div>
+          </FadeIn>
+          <div className="hp-choose__cards">
+            <FadeIn>
+              <a className="hp-pick hp-pick--e" href={`${basePath}/elektrikar-za-10-dni/`}>
+                <span className="hp-pick__kicker">Kompletní kvalifikace</span>
+                <h3 className="hp-pick__title">Elektrikář za 10 dní</h3>
+                <p className="hp-pick__desc">
+                  5 profesních kvalifikací, zkouška §6 a státní osvědčení. Školu
+                  mít nemusíte.
+                </p>
+                <span className="hp-pick__price">
+                  od 40 000 Kč <small>sleva 20 %</small>
+                </span>
+                <span className="hp-pick__go">
+                  Chci být elektrikář <ArrowRight size={17} />
+                </span>
+              </a>
+            </FadeIn>
+            <FadeIn>
+              <a className="hp-pick hp-pick--c" href={`${basePath}/chlazeni/`}>
+                <span className="hp-pick__kicker">23-054 + 23-055</span>
+                <h3 className="hp-pick__title">Chlazení za 4 dny</h3>
+                <p className="hp-pick__desc">
+                  Dvě osvědčení NSK pro malá i velká chladicí zařízení a tepelná
+                  čerpadla.
+                </p>
+                <span className="hp-pick__price">
+                  od 20 000 Kč <small>sleva 20 %</small>
+                </span>
+                <span className="hp-pick__go">
+                  Chci dělat chlazení <ArrowRight size={17} />
+                </span>
+              </a>
+            </FadeIn>
+          </div>
+          <FadeIn>
+            <a className="hp-choose__strip" href={`${basePath}/rekvalifikace/`}>
+              <span>
+                <strong>Jste v evidenci úřadu práce?</strong> Máme rekvalifikaci
+                Elektrikář, kterou hradí ÚP, spoluúčast 0 Kč.
+              </span>
+              <span className="hp-choose__strip-go">
+                Rekvalifikace <ArrowRight size={16} />
+              </span>
+            </a>
           </FadeIn>
         </div>
       </section>

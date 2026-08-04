@@ -3,18 +3,26 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, ArrowRight, Menu, X } from "lucide-react";
+import { Phone, ArrowRight, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 
-const NAV_ITEMS = [
+type NavLeaf = { label: string; href: string };
+type NavItem = NavLeaf | { label: string; children: NavLeaf[] };
+
+const COURSES: NavLeaf[] = [
+  { label: "Elektrikář za 10 dní", href: "/elektrikar-za-10-dni/" },
+  { label: "Chlazení za 4 dny", href: "/chlazeni/" },
+  { label: "Rekvalifikace přes ÚP", href: "/rekvalifikace/" },
+];
+
+const NAV_ITEMS: NavItem[] = [
   { label: "Úvod", href: "/" },
-  { label: "Elektro", href: "/elektrikar-za-10-dni/" },
-  { label: "Chlazení", href: "/chlazeni/" },
+  { label: "Kurzy", children: COURSES },
   { label: "O nás", href: "/o-nas/" },
   { label: "FAQ", href: "/faq/" },
   { label: "Kontakt", href: "/kontakt/" },
-] as const;
+];
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -33,6 +41,17 @@ export function SiteHeader() {
 
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const normalizedPath = pathname.replace(basePath, "") || "/";
+  const courseActive = COURSES.some((c) => c.href === normalizedPath);
+
+  // Hlavní CTA se řídí podle stránky, na které jsme.
+  const cta =
+    normalizedPath === "/elektrikar-za-10-dni/"
+      ? { label: "Rezervovat termín", href: `${basePath}/elektrikar-za-10-dni/#registrace` }
+      : normalizedPath === "/chlazeni/"
+        ? { label: "Poptat termín", href: `${basePath}/chlazeni/#poptavka` }
+        : normalizedPath === "/rekvalifikace/"
+          ? { label: "Mám zájem", href: `${basePath}/rekvalifikace/#poptavka` }
+          : { label: "Vybrat kurz", href: `${basePath}/#kurzy` };
 
   return (
     <>
@@ -49,17 +68,39 @@ export function SiteHeader() {
 
           <nav className="site-header__nav" aria-label="Hlavní navigace">
             <ul className="site-header__nav-list">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={`site-header__nav-link${normalizedPath === item.href ? " site-header__nav-link--active" : ""}`}
-                    aria-current={normalizedPath === item.href ? "page" : undefined}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {NAV_ITEMS.map((item) =>
+                "children" in item ? (
+                  <li key={item.label} className="site-header__has-drop">
+                    <button
+                      type="button"
+                      className={`site-header__nav-link site-header__drop-toggle${courseActive ? " site-header__nav-link--active" : ""}`}
+                      aria-haspopup="true"
+                    >
+                      {item.label}
+                      <ChevronDown size={15} aria-hidden="true" />
+                    </button>
+                    <ul className="site-header__drop">
+                      {item.children.map((c) => (
+                        <li key={c.href}>
+                          <Link href={c.href} className="site-header__drop-link">
+                            {c.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ) : (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={`site-header__nav-link${normalizedPath === item.href ? " site-header__nav-link--active" : ""}`}
+                      aria-current={normalizedPath === item.href ? "page" : undefined}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </nav>
 
@@ -74,10 +115,10 @@ export function SiteHeader() {
             variant="cta"
             size="sm"
             icon={<ArrowRight />}
-            href={`${basePath}/elektrikar-za-10-dni/#registrace`}
+            href={cta.href}
             className="site-header__cta"
           >
-            Rezervovat termín
+            {cta.label}
           </Button>
 
           <button
@@ -99,12 +140,36 @@ export function SiteHeader() {
       >
         <nav aria-label="Mobilní navigace">
           <ul className="site-header__mobile-list">
-            {NAV_ITEMS.map((item) => (
+            <li>
+              <Link
+                href="/"
+                className={`site-header__mobile-link${normalizedPath === "/" ? " site-header__mobile-link--active" : ""}`}
+                onClick={() => setMenuOpen(false)}
+              >
+                Úvod
+              </Link>
+            </li>
+            <li className="site-header__mobile-group">Kurzy</li>
+            {COURSES.map((c) => (
+              <li key={c.href}>
+                <Link
+                  href={c.href}
+                  className={`site-header__mobile-link site-header__mobile-link--sub${normalizedPath === c.href ? " site-header__mobile-link--active" : ""}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {c.label}
+                </Link>
+              </li>
+            ))}
+            {[
+              { label: "O nás", href: "/o-nas/" },
+              { label: "FAQ", href: "/faq/" },
+              { label: "Kontakt", href: "/kontakt/" },
+            ].map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
                   className={`site-header__mobile-link${normalizedPath === item.href ? " site-header__mobile-link--active" : ""}`}
-                  aria-current={normalizedPath === item.href ? "page" : undefined}
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
@@ -121,11 +186,11 @@ export function SiteHeader() {
           variant="cta"
           size="lg"
           icon={<ArrowRight />}
-          href={`${basePath}/elektrikar-za-10-dni/#registrace`}
+          href={cta.href}
           block
           onClick={() => setMenuOpen(false)}
         >
-          Rezervovat termín
+          {cta.label}
         </Button>
       </div>
     </>

@@ -162,3 +162,30 @@
   .site-footer__legal { flex-direction: column; text-align: center; }
   .site-footer__legal-links { flex-direction: column; gap: var(--space-sm); }
 }
+
+/* Dropdown "Kurzy" v hlavičce */
+.site-header__has-drop { position: relative; }
+.site-header__drop-toggle { display: inline-flex; align-items: center; gap: 4px; background: none; border: 0; font: inherit; cursor: pointer; }
+.site-header__drop-toggle svg { width: 15px; height: 15px; transition: transform var(--transition-fast); }
+.site-header__has-drop:hover .site-header__drop-toggle svg,
+.site-header__has-drop:focus-within .site-header__drop-toggle svg { transform: rotate(180deg); }
+.site-header__drop {
+  position: absolute; top: 100%; left: 0; margin: 0; padding: 8px;
+  min-width: 240px; list-style: none;
+  background: #fff; border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+  opacity: 0; visibility: hidden; transform: translateY(4px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+  z-index: 61;
+}
+.site-header__has-drop:hover .site-header__drop,
+.site-header__has-drop:focus-within .site-header__drop { opacity: 1; visibility: visible; transform: translateY(0); }
+.site-header__drop-link {
+  display: block; padding: 10px 12px; border-radius: var(--radius-md);
+  color: var(--text-body); text-decoration: none; font-size: 15px; font-weight: var(--fw-medium); white-space: nowrap;
+}
+.site-header__drop-link:hover { background: var(--voltimo-primary-soft); color: var(--voltimo-primary); }
+
+/* Mobilní skupina Kurzy */
+.site-header__mobile-group { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: var(--fw-semibold); padding: 14px 4px 4px; }
+.site-header__mobile-link--sub { padding-left: 18px; }
