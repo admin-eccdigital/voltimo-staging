@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import {
-  ArrowRight, Award, BadgeCheck, CalendarClock, CheckCircle2, ClipboardCheck,
-  GraduationCap, Info, Wallet,
+  ArrowRight, Award, BadgeCheck, CheckCircle2, ClipboardCheck,
+  GraduationCap, Wallet,
 } from "lucide-react";
 import { Button, Eyebrow, Heading, StatCircle, YellowLabel } from "@/components/brand";
 import { JsonLd } from "@/components/site";
 import { FadeIn } from "@/components/lp/FadeIn";
+import { RekvForm } from "@/components/rekvalifikace/RekvForm";
 import { SITE_URL, ORG } from "@/lib/site";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -77,7 +78,7 @@ export default function RekvalifikacePage() {
           </p>
 
           <div className="lp-hero__cta">
-            <Button variant="cta" size="lg" icon={<ArrowRight />} href={`${basePath}/kontakt/`}>
+            <Button variant="cta" size="lg" icon={<ArrowRight />} href="#poptavka">
               Mám zájem o rekvalifikaci
             </Button>
             <Button variant="outline" size="lg" className="chl-btn-ondark" href="#prubeh">
@@ -186,7 +187,7 @@ export default function RekvalifikacePage() {
               </div>
               <ul className="lp-outcome__list">
                 <li><span className="lp-check"><GraduationCap size={15} /></span>80 hodin teorie a 40 hodin praxe, prezenčně v Přešticích.</li>
-                <li><span className="lp-check"><ClipboardCheck size={15} /></span>Zkouška (8 h): písemný test a praktické předvedení před autorizovanou osobou (Bohumír Sobotka).</li>
+                <li><span className="lp-check"><ClipboardCheck size={15} /></span>Zkouška (8 h): písemný test a praktické předvedení před autorizovanou osobou.</li>
                 <li><span className="lp-check"><Award size={15} /></span>Po úspěchu osvědčení o profesní kvalifikaci a potvrzení o účasti.</li>
               </ul>
             </div>
@@ -245,27 +246,8 @@ export default function RekvalifikacePage() {
         </div>
       </section>
 
-      {/* ZÁVĚREČNÉ CTA */}
-      <section className="vlt-section vlt-section--subtle">
-        <div className="lp-wrap">
-          <div className="lp-head lp-head--center">
-            <Eyebrow>Termín 2. 11. – 4. 12. 2026</Eyebrow>
-            <Heading level={2}>Máte zájem o rekvalifikaci?</Heading>
-            <p className="lp-head__sub">
-              Kapacita běhu je 10 míst. Ozvěte se nám a projdeme s vámi kroky přes
-              úřad práce.
-            </p>
-          </div>
-          <div style={{ display: "flex", gap: 14, flexWrap: "wrap", justifyContent: "center", marginTop: 8 }}>
-            <Button variant="cta" size="lg" icon={<ArrowRight />} href={`${basePath}/kontakt/`}>
-              Napište nám
-            </Button>
-            <Button variant="outline" size="lg" href={ORG.phone ? `tel:+420601002989` : "#"}>
-              Zavolejte 601 002 989
-            </Button>
-          </div>
-        </div>
-      </section>
+      {/* POPTÁVKA */}
+      <RekvForm />
     </>
   );
 }

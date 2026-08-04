@@ -8,7 +8,7 @@
 .lp-head--center { margin-inline: auto; text-align: center; }
 .lp-head .vlt-eyebrow { margin-bottom: 12px; }
 .lp-head__sub { margin: 16px 0 0; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--text-muted); }
-.lp-section--dark .lp-head__sub { color: rgba(255,255,255,0.80); }
+.vlt-section--dark .lp-head__sub { color: rgba(255,255,255,0.85); }
 
 /* ============================ HEADER ============================ */
 .lp-header {
