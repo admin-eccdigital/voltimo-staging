@@ -58,6 +58,15 @@ export function SiteFooter() {
               Praxe, zkoušky podle NSK a státní osvědčení.
             </p>
           </div>
+          <nav className="site-footer__nav" aria-label="Odkazy v patičce">
+            <span className="site-footer__nav-h">Nabídka</span>
+            <a href={`${basePath}/elektrikar-za-10-dni/`}>Elektrikář za 10 dní</a>
+            <a href={`${basePath}/rekvalifikace/`}>Rekvalifikace přes ÚP</a>
+            <a href={`${basePath}/chlazeni/`}>Chlazení</a>
+            <a href={`${basePath}/o-nas/`}>O nás</a>
+            <a href={`${basePath}/faq/`}>Časté dotazy</a>
+            <a href={`${basePath}/kontakt/`}>Kontakt</a>
+          </nav>
         </div>
         <div className="site-footer__legal">
           <span>

@@ -138,6 +138,17 @@
   color: rgba(255,255,255,0.70); margin: 0;
 }
 
+.site-footer__nav { display: flex; flex-direction: column; gap: 10px; flex: none; }
+.site-footer__nav-h {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+  font-weight: var(--fw-semibold); color: rgba(255,255,255,0.6); margin-bottom: 4px;
+}
+.site-footer__nav a {
+  color: rgba(255,255,255,0.72); text-decoration: none; font-size: var(--fs-small);
+  transition: color var(--transition-fast);
+}
+.site-footer__nav a:hover { color: var(--voltimo-yellow); }
+
 .site-footer__legal {
   max-width: var(--container-max); margin-inline: auto;
   padding-top: var(--space-lg);
@@ -163,12 +174,13 @@
   .site-footer__legal-links { flex-direction: column; gap: var(--space-sm); }
 }
 
-/* Dropdown "Kurzy" v hlavičce */
+/* Dropdown "Elektro" v hlavičce (klik jen rozbalí, nenaviguje) */
 .site-header__has-drop { position: relative; }
 .site-header__drop-toggle { display: inline-flex; align-items: center; gap: 4px; background: none; border: 0; font: inherit; cursor: pointer; }
 .site-header__drop-toggle svg { width: 15px; height: 15px; transition: transform var(--transition-fast); }
 .site-header__has-drop:hover .site-header__drop-toggle svg,
-.site-header__has-drop:focus-within .site-header__drop-toggle svg { transform: rotate(180deg); }
+.site-header__has-drop:focus-within .site-header__drop-toggle svg,
+.site-header__has-drop--open .site-header__drop-toggle svg { transform: rotate(180deg); }
 .site-header__drop {
   position: absolute; top: 100%; left: 0; margin: 0; padding: 8px;
   min-width: 240px; list-style: none;
@@ -179,13 +191,15 @@
   z-index: 61;
 }
 .site-header__has-drop:hover .site-header__drop,
-.site-header__has-drop:focus-within .site-header__drop { opacity: 1; visibility: visible; transform: translateY(0); }
+.site-header__has-drop:focus-within .site-header__drop,
+.site-header__has-drop--open .site-header__drop { opacity: 1; visibility: visible; transform: translateY(0); }
 .site-header__drop-link {
   display: block; padding: 10px 12px; border-radius: var(--radius-md);
   color: var(--text-body); text-decoration: none; font-size: 15px; font-weight: var(--fw-medium); white-space: nowrap;
 }
 .site-header__drop-link:hover { background: var(--voltimo-primary-soft); color: var(--voltimo-primary); }
 
-/* Mobilní skupina Kurzy */
-.site-header__mobile-group { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: var(--fw-semibold); padding: 14px 4px 4px; }
+/* Mobilní skupina Elektro */
+.site-header__mobile-group { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: var(--fw-semibold); padding: 14px 4px 4px; }
+.site-header__mobile-sublist { list-style: none; margin: 0; padding: 0; }
 .site-header__mobile-link--sub { padding-left: 18px; }

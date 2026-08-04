@@ -3,13 +3,26 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, ArrowRight, Menu, X } from "lucide-react";
+import { Phone, ArrowRight, Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/brand";
 import { LP_DATA } from "@/lib/lp-data";
 
-const NAV_ITEMS = [
+type NavItem = {
+  label: string;
+  href: string;
+  children?: readonly { label: string; href: string }[];
+};
+
+const NAV_ITEMS: readonly NavItem[] = [
   { label: "Úvod", href: "/" },
-  { label: "Elektro", href: "/elektrikar-za-10-dni/" },
+  {
+    label: "Elektro",
+    href: "/elektrikar-za-10-dni/",
+    children: [
+      { label: "Elektrikář za 10 dní", href: "/elektrikar-za-10-dni/" },
+      { label: "Rekvalifikace přes ÚP", href: "/rekvalifikace/" },
+    ],
+  },
   { label: "Chlazení", href: "/chlazeni/" },
   { label: "O nás", href: "/o-nas/" },
   { label: "FAQ", href: "/faq/" },
@@ -19,9 +32,11 @@ const NAV_ITEMS = [
 export function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropOpen, setDropOpen] = useState(false);
 
   useEffect(() => {
     setMenuOpen(false);
+    setDropOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -59,17 +74,49 @@ export function SiteHeader() {
 
           <nav className="site-header__nav" aria-label="Hlavní navigace">
             <ul className="site-header__nav-list">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={`site-header__nav-link${normalizedPath === item.href ? " site-header__nav-link--active" : ""}`}
-                    aria-current={normalizedPath === item.href ? "page" : undefined}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {NAV_ITEMS.map((item) => {
+                if (item.children) {
+                  const groupActive = item.children.some(
+                    (c) => c.href === normalizedPath,
+                  );
+                  return (
+                    <li
+                      key={item.href}
+                      className={`site-header__has-drop${dropOpen ? " site-header__has-drop--open" : ""}`}
+                    >
+                      <button
+                        type="button"
+                        className={`site-header__nav-link site-header__drop-toggle${groupActive ? " site-header__nav-link--active" : ""}`}
+                        onClick={() => setDropOpen((o) => !o)}
+                        aria-expanded={dropOpen}
+                      >
+                        {item.label}
+                        <ChevronDown />
+                      </button>
+                      <ul className="site-header__drop">
+                        {item.children.map((c) => (
+                          <li key={c.href}>
+                            <Link href={c.href} className="site-header__drop-link">
+                              {c.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  );
+                }
+                return (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={`site-header__nav-link${normalizedPath === item.href ? " site-header__nav-link--active" : ""}`}
+                      aria-current={normalizedPath === item.href ? "page" : undefined}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
@@ -109,18 +156,41 @@ export function SiteHeader() {
       >
         <nav aria-label="Mobilní navigace">
           <ul className="site-header__mobile-list">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`site-header__mobile-link${normalizedPath === item.href ? " site-header__mobile-link--active" : ""}`}
-                  aria-current={normalizedPath === item.href ? "page" : undefined}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              if (item.children) {
+                return (
+                  <li key={item.href}>
+                    <span className="site-header__mobile-group">{item.label}</span>
+                    <ul className="site-header__mobile-sublist">
+                      {item.children.map((c) => (
+                        <li key={c.href}>
+                          <Link
+                            href={c.href}
+                            className={`site-header__mobile-link site-header__mobile-link--sub${normalizedPath === c.href ? " site-header__mobile-link--active" : ""}`}
+                            aria-current={normalizedPath === c.href ? "page" : undefined}
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            {c.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                );
+              }
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`site-header__mobile-link${normalizedPath === item.href ? " site-header__mobile-link--active" : ""}`}
+                    aria-current={normalizedPath === item.href ? "page" : undefined}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
         <a className="site-header__mobile-phone" href={LP_DATA.phoneHref}>
