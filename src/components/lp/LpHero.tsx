@@ -24,9 +24,9 @@ export function LpHero() {
         </HeroItem>
 
         <HeroItem>
-          <span className="lp-hero__tabs">
+          <h1 className="lp-hero__tabs">
             <YellowLabel lines={["Ne škola.", "Výcvik."]} size="lg" />
-          </span>
+          </h1>
         </HeroItem>
 
         <HeroItem>

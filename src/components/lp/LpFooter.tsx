@@ -69,7 +69,9 @@ export function LpFooter() {
           <span>
             © 2026 Voltimo · Středisko profesního vzdělávání · Přeštice
           </span>
-          <span>Zásady ochrany osobních údajů</span>
+          <a href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/gdpr/`}>
+            Zásady ochrany osobních údajů
+          </a>
         </div>
       </div>
     </footer>

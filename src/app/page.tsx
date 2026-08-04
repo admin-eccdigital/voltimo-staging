@@ -91,14 +91,14 @@ export default function HomePage() {
             <span className="hp-hero__eyebrow">
               <GraduationCap size={17} /> Středisko profesního vzdělávání
             </span>
-            <div className="hp-hero__labels">
+            <h1 className="hp-hero__labels">
               <span className="hp-hero__label hp-hero__label--top">
                 Opravdová kvalifikace.
               </span>
               <span className="hp-hero__label hp-hero__label--bottom">
                 Opravdové řemeslo.
               </span>
-            </div>
+            </h1>
             <p className="hp-hero__lead">
               Využijte profesní kvalifikace k tomu, co dává smysl – získat
               celostátní osvědčení a práci, která má budoucnost.

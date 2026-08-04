@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { SiteHeader, SiteFooter } from "@/components/site";
+import {
+  SiteHeader,
+  SiteFooter,
+  JsonLd,
+  Analytics,
+  CookieConsent,
+} from "@/components/site";
+import { BASE_PATH, SITE_ORIGIN, SITE_URL, NOINDEX, ORG } from "@/lib/site";
 import "./globals.css";
 
 const sourceSans = localFont({
@@ -20,11 +27,58 @@ const sourceSans = localFont({
   display: "swap",
 });
 
+const OG_IMAGE = `${BASE_PATH}/og/og-default.png`;
+const TITLE = "Voltimo — Výcvik elektrikářů";
+const DESCRIPTION =
+  "Středisko profesního vzdělávání v elektrotechnice. Výcvik, zkouška §6 a státní osvědčení Elektrikář za 10 dní.";
+
 export const metadata: Metadata = {
-  title: "Voltimo — Výcvik elektrikářů",
-  description: "Středisko profesního vzdělávání v elektrotechnice. Výcvik, zkouška §6 a státní osvědčení Elektrikář za 10 dní.",
+  metadataBase: new URL(SITE_ORIGIN),
+  title: TITLE,
+  description: DESCRIPTION,
+  applicationName: "Voltimo",
   icons: {
-    icon: "/voltimo-staging/logo/favicon.svg",
+    icon: `${BASE_PATH}/logo/favicon.svg`,
+    apple: `${BASE_PATH}/icons/apple-touch-icon.png`,
+  },
+  openGraph: {
+    type: "website",
+    locale: "cs_CZ",
+    siteName: "Voltimo",
+    url: `${SITE_URL}/`,
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [
+      { url: OG_IMAGE, width: 1200, height: 630, alt: "Voltimo — Elektrikář za 10 dní" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  robots: NOINDEX ? { index: false, follow: false } : undefined,
+};
+
+const organizationLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": `${SITE_URL}/#organization`,
+  name: ORG.legalName,
+  alternateName: ORG.name,
+  url: `${SITE_URL}/`,
+  logo: `${SITE_URL}/icons/icon-512.png`,
+  image: `${SITE_URL}/og/og-default.png`,
+  email: ORG.email,
+  telephone: ORG.phone,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: ORG.street,
+    addressLocality: ORG.city,
+    postalCode: ORG.zip,
+    addressRegion: ORG.region,
+    addressCountry: ORG.country,
   },
 };
 
@@ -45,6 +99,9 @@ export default function RootLayout({
         <SiteHeader />
         <main id="hlavni-obsah">{children}</main>
         <SiteFooter />
+        <CookieConsent />
+        <Analytics />
+        <JsonLd data={organizationLd} />
       </body>
     </html>
   );

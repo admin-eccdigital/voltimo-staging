@@ -13,6 +13,8 @@ import {
   LpEdge,
   LpRegistration,
 } from "@/components/lp";
+import { JsonLd } from "@/components/site";
+import { SITE_URL, ORG } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Elektrikář za 10 dní — Voltimo",
@@ -20,9 +22,26 @@ export const metadata: Metadata = {
     "Úplná kvalifikace Elektrikář za 10 dní výcviku. Praxe, zkouška §6 a státní osvědčení. Prezenční výcvik v Přešticích.",
 };
 
+const courseLd = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: "Elektrikář za 10 dní",
+  description:
+    "Úplná profesní kvalifikace Elektrikář za 10 dní prezenčního výcviku – praxe, zkouška §6 a státní osvědčení. Přeštice, Plzeňsko.",
+  url: `${SITE_URL}/elektrikar-za-10-dni/`,
+  inLanguage: "cs",
+  provider: {
+    "@type": "EducationalOrganization",
+    "@id": `${SITE_URL}/#organization`,
+    name: ORG.legalName,
+    url: `${SITE_URL}/`,
+  },
+};
+
 export default function ElektrikarPage() {
   return (
     <>
+      <JsonLd data={courseLd} />
       <LpHero />
       <LpOutcome />
       <LpAudience />

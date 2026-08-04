@@ -8,6 +8,7 @@
 @import "../styles/kontakt.css";
 @import "../styles/faq.css";
 @import "../styles/legal.css";
+@import "../styles/cookie.css";
 
 @theme inline {
   --color-voltimo-primary: #1E3876;

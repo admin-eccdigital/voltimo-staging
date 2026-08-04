@@ -1,0 +1,94 @@
+/* Cookie consent lišta */
+.cookie-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  pointer-events: none;
+}
+.cookie-bar__inner {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 18px 22px;
+  background: var(--voltimo-primary);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 44px rgba(15, 23, 41, 0.35);
+}
+.cookie-bar__text {
+  flex: 1 1 320px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #EAEEF6;
+}
+.cookie-bar__text a {
+  color: var(--voltimo-yellow);
+  text-decoration: underline;
+}
+.cookie-bar__actions {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 10px;
+}
+.cookie-bar__btn {
+  border-radius: var(--radius-full);
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background var(--transition), border-color var(--transition);
+}
+.cookie-bar__btn--ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.cookie-bar__btn--ghost:hover {
+  border-color: #fff;
+}
+.cookie-bar__btn--cta {
+  background: var(--voltimo-yellow);
+  color: var(--voltimo-primary);
+}
+.cookie-bar__btn--cta:hover {
+  background: var(--voltimo-yellow-hover);
+}
+
+/* Odkaz „Nastavení cookies" v patičce – vypadá jako ostatní odkazy */
+.cookie-settings-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+.cookie-settings-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .cookie-bar__inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cookie-bar__actions {
+    justify-content: stretch;
+  }
+  .cookie-bar__btn {
+    flex: 1;
+  }
+}

@@ -3,6 +3,7 @@ import { Award, Wrench, Banknote, ShieldCheck, ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { Button, Eyebrow, Heading } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
+import { JsonLd } from "@/components/site";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -10,6 +11,56 @@ export const metadata: Metadata = {
   title: "FAQ — Voltimo",
   description:
     "Nejčastější dotazy o profesních kvalifikacích, kurzech a zkouškách NSK ve Středisku profesního vzdělávání VOLTIMO.",
+};
+
+// Textové verze odpovědí pro strukturovaná data (FAQPage rich results).
+const FAQ_LD_ITEMS: { q: string; a: string }[] = [
+  {
+    q: "Co je to profesní kvalifikace podle NSK?",
+    a: "Je to oficiálně uznávané osvědčení o odbornosti. Získáte ho složením zkoušky dle Národní soustavy kvalifikací. Má váhu u zaměstnavatelů, živnostenského úřadu i státu.",
+  },
+  {
+    q: "Je to stejné jako výuční list?",
+    a: "Ne. Výuční list se získává studiem na odborné střední škole. NSK kvalifikace je určená pro dospělé – dá se složit na základě kurzu a zkoušky, bez tříletého studia.",
+  },
+  {
+    q: "Co můžu se zkouškou podle NSK dělat dál?",
+    a: "Získáte Osvědčení o profesní kvalifikaci, které má váhu u zaměstnavatelů, živnostenských úřadů i státu. Můžete s ním žádat o živnostenské oprávnění v daném oboru, doložit odbornost zaměstnavateli, využít ho jako součást rekvalifikace nebo kariérního postupu, nebo si rozšířit stávající kvalifikaci (např. u elektro profesí ve spojení s NV 194/2022 Sb. a získat odbornou způsobilost elektrotechnik §6).",
+  },
+  {
+    q: "Musím už mít praxi v oboru, nebo můžu začít od nuly?",
+    a: "Můžete obojí. Některé zkoušky jsou vhodné i pro začátečníky – zvládnete je s intenzivní přípravou. Pokud už máte praxi, budete mít výhodu, ale není to podmínkou.",
+  },
+  {
+    q: "Kolik času mi zabere příprava?",
+    a: "Záleží na vaší úrovni znalostí. Někteří se připraví za pár týdnů, jiní potřebují víc času. Na kurzu vám pomůžeme zaměřit se na to, co je pro vás klíčové.",
+  },
+  {
+    q: "Kde probíhá výuka a zkouška?",
+    a: "Praktická i teoretická část výuky i zkoušky probíhá ve vybavené učebně v Přešticích na reálných zařízeních.",
+  },
+  {
+    q: "Co když zkoušku neudělám napoprvé?",
+    a: "Můžete ji opakovat. A hlavně: připravíme vás tak, abyste ji napoprvé zvládli. Máme zkušenosti s tím, jak vás připravit prakticky a srozumitelně.",
+  },
+  {
+    q: "Kolik to stojí a co je v ceně?",
+    a: "Cenu najdete u každého kurzu. V ceně je výuka, podklady i příprava ke zkoušce. Neplatíte žádné skryté poplatky – vše vám vysvětlíme předem.",
+  },
+  {
+    q: "Co když mi nevyhovuje termín kurzu nebo zkoušky?",
+    a: "Ozvěte se nám – v mnoha případech umíme najít individuální řešení. Přípravu můžeme přizpůsobit vašemu času, případně domluvit individuální konzultace nebo náhradní termín.",
+  },
+];
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQ_LD_ITEMS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
 };
 
 type FaqItem = { q: string; a: ReactNode };
@@ -145,6 +196,7 @@ function FaqGroup({
 export default function FaqPage() {
   return (
     <>
+      <JsonLd data={faqLd} />
       {/* HERO */}
       <section className="faq-hero">
         <div className="faq-hero__grid" aria-hidden="true" />

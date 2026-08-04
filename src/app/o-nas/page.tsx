@@ -37,11 +37,11 @@ const BENEFITS: readonly { title: string; text: string; featured?: boolean }[] =
 ];
 
 const GALLERY_THUMBS: readonly { src: string; alt: string; position?: string }[] = [
-  { src: "prace-panel.png", alt: "Práce na panelu", position: "60% center" },
-  { src: "rozvadec-praxe.png", alt: "Praxe na rozvaděči" },
-  { src: "lektor-zak.png", alt: "Lektor s žákem" },
-  { src: "studium-ucebna.png", alt: "Studium v učebně" },
-  { src: "priprava-zkouska.png", alt: "Příprava ke zkoušce" },
+  { src: "prace-panel.jpg", alt: "Práce na panelu", position: "60% center" },
+  { src: "rozvadec-praxe.jpg", alt: "Praxe na rozvaděči" },
+  { src: "lektor-zak.jpg", alt: "Lektor s žákem" },
+  { src: "studium-ucebna.jpg", alt: "Studium v učebně" },
+  { src: "priprava-zkouska.jpg", alt: "Příprava ke zkoušce" },
 ];
 
 export default function ONasPage() {

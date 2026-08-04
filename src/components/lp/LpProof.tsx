@@ -57,6 +57,7 @@ function VideoCard({ v }: { v: (typeof VIDEOS)[number] }) {
               type="button"
               className="lp-video__play"
               aria-label={`Přehrát videoreferenci – ${v.heading}`}
+              onClick={() => setPlaying(true)}
             >
               <Play />
             </button>

@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import { LP_DATA } from "@/lib/lp-data";
+import { CookieSettingsLink } from "./CookieSettingsLink";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -59,6 +60,7 @@ export function SiteFooter() {
           <span className="site-footer__legal-links">
             <a href={`${basePath}/gdpr/`}>Zásady ochrany osobních údajů</a>
             <a href={`${basePath}/vop/`}>Všeobecné obchodní podmínky</a>
+            <CookieSettingsLink />
           </span>
         </div>
       </div>

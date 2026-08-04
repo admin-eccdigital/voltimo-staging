@@ -19,7 +19,7 @@
 }
 .hp-hero__labels {
   display: inline-flex; flex-direction: column; align-items: flex-start;
-  gap: 8px; margin-bottom: 28px;
+  gap: 8px; margin: 0 0 28px;
 }
 .hp-hero__label {
   background: var(--voltimo-yellow); color: var(--text-heading);
