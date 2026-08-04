@@ -6,11 +6,11 @@ const YES = [
   "Zedník, údržbář, OSVČ nebo hodinový manžel, co elektriku reálně dělá",
   "Montér fotovoltaiky nebo chlazení, který se elektriky denně dotýká",
   "Zkušený z oboru, co potřebuje jen §6 pro samostatnou práci",
-  "Manuálně zručný člověk – kdo umí se šroubovákem",
+  "Manuálně zručný člověk, co umí se šroubovákem",
 ];
 
 const NO = [
-  "Kdo chce dělat revizního technika – na to potřebuje školu",
+  "Kdo chce dělat revizního technika, na to potřebuje školu",
   "Kdo chce pochopit elektriku do posledního detailu",
 ];
 

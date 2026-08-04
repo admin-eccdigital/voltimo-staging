@@ -9,7 +9,7 @@ export function LpEdge() {
       <div className="lp-wrap">
         <div className="lp-head">
           <Eyebrow>Už něco umíte?</Eyebrow>
-          <Heading level={2}>Kratší cesty – pokud na ně máte.</Heading>
+          <Heading level={2}>Kratší cesty, pokud na ně máte.</Heading>
           <p className="lp-head__sub">
             Většině lidí doporučíme celý výcvik. Ale pokud spadáte do jedné z
             těchto skupin, ozvěte se a poradíme.

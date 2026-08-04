@@ -69,7 +69,7 @@ const FAQ = [
   { q: "Jak rychle začnu po přihlášení?", a: "Termíny vypisujeme průběžně. Po poptávce vás kontaktujeme a domluvíme nejbližší vhodný termín." },
   { q: "Co když nemám elektro vzdělání?", a: "Pro samostatnou živnost budete potřebovat i odbornou způsobilost §6. To u nás také zařídíme, ale je to samostatný kurz." },
   { q: "Co když zkoušku neudělám napoprvé?", a: "Můžete ji opakovat. Naše příprava ale stojí přesně na tom, abyste prošli napoprvé." },
-  { q: "Kde to probíhá?", a: "V Přešticích, v naší učebně a praktických dílnách. Prezenčně — na řemeslo si musíte sáhnout." },
+  { q: "Kde to probíhá?", a: "V Přešticích, v naší učebně a praktických dílnách. Prezenčně. Na řemeslo si musíte sáhnout." },
   { q: "Co potřebuji s sebou?", a: "Platný občanský průkaz a lékařské potvrzení o zdravotní způsobilosti (formulář pošleme po přihlášce). Pracovní oblečení a obuv." },
 ] as const;
 
@@ -94,7 +94,7 @@ export default function ChlazeniPage() {
 
           <p className="lp-hero__lead">
             Dva dny příprava, dva dny zkoušky. Pro lidi, kteří chlazení už dělají a potřebují to mít
-            konečně oficiálně — dvě osvědčení NSK pro malá i velká chladicí zařízení a tepelná čerpadla.
+            konečně oficiálně. Dvě osvědčení NSK pro malá i velká chladicí zařízení a tepelná čerpadla.
           </p>
 
           <div className="lp-hero__cta">
@@ -205,7 +205,7 @@ export default function ChlazeniPage() {
               <Heading level={2}>Takhle to u nás vypadá.</Heading>
               <p className="lp-head__sub">
                 Žádné modely a schémata na tabuli. Vlastní chladicí okruhy, vývěva, odsávačka,
-                digitální manifold i detektor úniků — vše, co pak držíte v ruce na zakázce.
+                digitální manifold i detektor úniků. Vše, co pak držíte v ruce na zakázce.
               </p>
             </div>
           </FadeIn>
@@ -235,7 +235,7 @@ export default function ChlazeniPage() {
               <Eyebrow tone="ondark">Co lidem v oboru běží hlavou</Eyebrow>
               <Heading level={2} ondark>Slyšíme to při každém běhu.</Heading>
               <p className="lp-head__sub">
-                Proto je kurz postavený na čtyři dny a na praxi — ne na měsíce teorie.
+                Proto je kurz postavený na čtyři dny a na praxi, ne na měsíce teorie.
               </p>
             </div>
           </FadeIn>
@@ -305,7 +305,7 @@ export default function ChlazeniPage() {
                 <Heading level={2}>Dvě osvědčení NSK. Po čtvrtém dni v ruce.</Heading>
                 <p className="lp-head__sub">
                   Pro malá i velká chladicí a klimatizační zařízení a tepelná čerpadla. Papír, který
-                  chce zaměstnavatel — a doklad, který otevírá cestu k vyššímu platu a k vlastní živnosti.
+                  chce zaměstnavatel. A doklad, který otevírá cestu k vyššímu platu a k vlastní živnosti.
                 </p>
               </div>
               <ul className="lp-outcome__list">
@@ -315,7 +315,7 @@ export default function ChlazeniPage() {
                 </li>
                 <li>
                   <span className="lp-check"><Check size={15} /></span>
-                  Doklad pro zaměstnavatele — kvůli kontrolám i pojištění.
+                  Doklad pro zaměstnavatele, kvůli kontrolám i pojištění.
                 </li>
                 <li>
                   <span className="lp-check"><Check size={15} /></span>
@@ -324,7 +324,7 @@ export default function ChlazeniPage() {
               </ul>
               <p className="chl-note">
                 Nemáte elektro vzdělání a budete k živnosti potřebovat i odbornou způsobilost §6?
-                Zajistíme i to —{" "}
+                Zajistíme i to,{" "}
                 <a href={`${basePath}/elektrikar-za-10-dni/`}>elektro u nás děláme také</a>.
               </p>
               <div style={{ marginTop: 22 }}>
@@ -340,8 +340,8 @@ export default function ChlazeniPage() {
               <h3 className="lp-cert__title">Servisní mechanik chlazení a klimatizací</h3>
               <p className="lp-cert__meta">23-054-H + 23-055-H · malá i velká zařízení · tepelná čerpadla</p>
               <ul className="lp-cert__pks">
-                <li><CheckCircle2 size={16} />23-054-H — malá chladicí a klimatizační zařízení</li>
-                <li><CheckCircle2 size={16} />23-055-H — velká chladicí a klimatizační zařízení</li>
+                <li><CheckCircle2 size={16} />23-054-H: malá chladicí a klimatizační zařízení</li>
+                <li><CheckCircle2 size={16} />23-055-H: velká chladicí a klimatizační zařízení</li>
                 <li><CheckCircle2 size={16} />Tepelná čerpadla v obou kvalifikacích</li>
               </ul>
               <div className="lp-cert__seal">
@@ -361,7 +361,7 @@ export default function ChlazeniPage() {
               <Eyebrow>Podrobnosti kurzu</Eyebrow>
               <Heading level={2}>Co přesně během 4 dní absolvujete.</Heading>
               <p className="lp-head__sub">
-                Dva dny příprava, dva dny zkoušky — vše na jednom místě, v Přešticích.
+                Dva dny příprava, dva dny zkoušky, vše na jednom místě, v Přešticích.
               </p>
             </div>
           </FadeIn>
@@ -379,7 +379,7 @@ export default function ChlazeniPage() {
             <FadeIn>
               <div className="chl-day">
                 <span className="chl-day__code"><Snowflake size={15} />23-054-H</span>
-                <h3>Zkouška — malá zařízení</h3>
+                <h3>Zkouška: malá zařízení</h3>
                 <p>
                   Servisní mechanik/mechanička <strong>malých</strong> chladicích a klimatizačních
                   zařízení a tepelných čerpadel.
@@ -389,7 +389,7 @@ export default function ChlazeniPage() {
             <FadeIn>
               <div className="chl-day">
                 <span className="chl-day__code"><Snowflake size={15} />23-055-H</span>
-                <h3>Zkouška — velká zařízení</h3>
+                <h3>Zkouška: velká zařízení</h3>
                 <p>
                   Servisní mechanik/mechanička <strong>velkých</strong> chladicích a klimatizačních
                   zařízení a tepelných čerpadel.
@@ -446,7 +446,7 @@ export default function ChlazeniPage() {
                 <Button variant="cta" size="lg" icon={<ArrowRight />} href="#poptavka">
                   Poptat termín kurzu
                 </Button>
-                <small>Termíny vypisujeme průběžně — po poptávce vám nabídneme nejbližší vhodný.</small>
+                <small>Termíny vypisujeme průběžně. Po poptávce vám nabídneme nejbližší vhodný.</small>
               </div>
             </div>
           </FadeIn>

@@ -21,7 +21,7 @@ export function LpOutcome() {
               <Eyebrow>Co budete mít na konci</Eyebrow>
               <Heading level={2}>Státní osvědčení Elektrikář.</Heading>
               <p className="lp-head__sub">
-                Skládáte úplnou profesní kvalifikaci Elektrikář – 5 profesních
+                Skládáte úplnou profesní kvalifikaci Elektrikář, 5 profesních
                 kvalifikací zakončených zkouškou §6. Odborná způsobilost dle NV
                 194/2022 Sb.
               </p>
@@ -29,7 +29,7 @@ export function LpOutcome() {
             <ul className="lp-outcome__list">
               <li>
                 <span className="lp-check"><Check /></span>
-                Státní osvědčení o úplné profesní kvalifikaci – celostátně
+                Státní osvědčení o úplné profesní kvalifikaci, celostátně
                 uznávané.
               </li>
               <li>

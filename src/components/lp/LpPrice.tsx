@@ -10,7 +10,7 @@ const INCLUDES = [
   "40 hodin praktického výcviku v dílně",
   "Všech 5 profesních kvalifikací",
   "Zkouška §6 a státní osvědčení",
-  "Záruka prvního dne – vrácení peněz",
+  "Záruka prvního dne: vrácení peněz",
 ];
 
 export function LpPrice() {

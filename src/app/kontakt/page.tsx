@@ -67,7 +67,7 @@ export default function KontaktPage() {
                 <span className="kt-card__label">E-mail</span>
                 <span className="kt-card__value">info@voltimo.cz</span>
                 <span className="kt-card__desc">
-                  Napište nám kdykoliv – odpovídáme do druhého dne.
+                  Napište nám kdykoliv, odpovídáme do druhého dne.
                 </span>
               </a>
               <a
@@ -94,7 +94,7 @@ export default function KontaktPage() {
                   <Clock size={22} />
                 </span>
                 <span className="kt-card__label">Provozní doba</span>
-                <span className="kt-card__value">Pondělí – pátek</span>
+                <span className="kt-card__value">Pondělí až pátek</span>
                 <span className="kt-card__desc">9:00 – 17:00</span>
               </div>
             </div>

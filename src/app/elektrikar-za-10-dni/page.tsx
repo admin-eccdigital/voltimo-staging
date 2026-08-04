@@ -27,7 +27,7 @@ const courseLd = {
   "@type": "Course",
   name: "Elektrikář za 10 dní",
   description:
-    "Úplná profesní kvalifikace Elektrikář za 10 dní prezenčního výcviku – praxe, zkouška §6 a státní osvědčení. Přeštice, Plzeňsko.",
+    "Úplná profesní kvalifikace Elektrikář za 10 dní prezenčního výcviku. Praxe, zkouška §6 a státní osvědčení. Přeštice, Plzeňsko.",
   url: `${SITE_URL}/elektrikar-za-10-dni/`,
   inLanguage: "cs",
   provider: {
