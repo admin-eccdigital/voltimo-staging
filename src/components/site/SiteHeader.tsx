@@ -10,6 +10,7 @@ import { LP_DATA } from "@/lib/lp-data";
 const NAV_ITEMS = [
   { label: "Úvod", href: "/" },
   { label: "Kurz", href: "/elektrikar-za-10-dni/" },
+  { label: "Chlazení", href: "/chlazeni/" },
   { label: "O nás", href: "/o-nas/" },
   { label: "FAQ", href: "/faq/" },
   { label: "Kontakt", href: "/kontakt/" },
