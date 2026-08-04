@@ -27,14 +27,14 @@ const STEPS: readonly { title: string; text: string }[] = [
   },
   {
     title: "Osvědčení a další cesta",
-    text: "Získáte Osvědčení o získání profesní kvalifikace. A můžete pokračovat dál – třeba až k úplné profesní kvalifikaci a tím vlastnímu podnikání.",
+    text: "Získáte Osvědčení o získání profesní kvalifikace. A můžete pokračovat dál, třeba až k úplné profesní kvalifikaci a tím vlastnímu podnikání.",
   },
 ];
 
 const SOUL_COLS: readonly string[] = [
-  "Voltimo nevzniklo jako další vzdělávací agentura. Vzniklo z přesvědčení, že řemeslo má smysl – a že šikovní lidé si zaslouží papír, který jejich práci konečně uzná.",
-  "Učíme na reálných zařízeních, ne na teorii z prezentací. Zapojíte ruce od prvního dne a každý krok vám vysvětlíme tak, abyste mu skutečně rozuměli.",
-  "Nejsme anonymní instituce. Jsme lidé z oboru, kteří vás provedou od první otázky až po státní osvědčení – a zůstanou vám oporou i potom.",
+  "Nejsme další vzdělávací agentura. Řemeslo má smysl a šikovný člověk si zaslouží papír, který jeho práci uzná.",
+  "Učíme na reálných zařízeních, ne z prezentací. Nářadí chytnete první den a všechno vám vysvětlíme, aby vám to sedlo.",
+  "Nejsme anonymní instituce. Jsme lidi z oboru. Provedeme vás od první otázky až po osvědčení.",
 ];
 
 const ZIGZAG: readonly {
@@ -93,15 +93,16 @@ export default function HomePage() {
             </span>
             <h1 className="hp-hero__labels">
               <span className="hp-hero__label hp-hero__label--top">
-                Opravdová kvalifikace.
+                Z praxe ke kvalifikaci.
               </span>
               <span className="hp-hero__label hp-hero__label--bottom">
-                Opravdové řemeslo.
+                Nejkratší cestou.
               </span>
             </h1>
             <p className="hp-hero__lead">
-              Využijte profesní kvalifikace k tomu, co dává smysl – získat
-              celostátní osvědčení a práci, která má budoucnost.
+              Státní osvědčení, které uznává úřad i zaměstnavatel a otevře
+              cestu na vlastní živnost. Postavené na praxi, ne na měsících
+              teorie.
             </p>
             <div className="hp-hero__actions">
               <Button
@@ -160,8 +161,8 @@ export default function HomePage() {
                 <Eyebrow tone="ondark">Náš hlavní program</Eyebrow>
                 <h2 className="hp-program__h2">Elektrikář za 10 dní</h2>
                 <p className="hp-program__desc">
-                  Úplná kvalifikace Elektrikář za 10 dní výcviku. Žádné měsíce
-                  u videí a teorie – jen praxe, zkouška §6 a státní osvědčení.
+                  Úplná kvalifikace za 10 dní výcviku. Žádné měsíce u videí.
+                  Praxe, zkouška §6, státní osvědčení.
                 </p>
                 <div className="hp-program__features">
                   <span className="hp-program__feature">
@@ -223,10 +224,9 @@ export default function HomePage() {
           </FadeIn>
           <FadeIn>
             <blockquote className="hp-soul__quote">
-              „Jsme malá škola s{" "}
-              <span className="hp-soul__accent">velkým záměrem</span>: pomáhat
-              lidem získat kvalifikaci v tom, co opravdu umí – nebo chtějí
-              umět."
+              „Jsme malá škola. Děláme ze šikovných lidí{" "}
+              <span className="hp-soul__accent">kvalifikované</span>, rychle a
+              tak, aby odcházeli spokojení a s jistotou."
             </blockquote>
           </FadeIn>
           <div className="hp-soul__cols">
