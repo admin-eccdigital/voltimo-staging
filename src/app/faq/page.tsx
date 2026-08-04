@@ -21,7 +21,7 @@ const FAQ_LD_ITEMS: { q: string; a: string }[] = [
   },
   {
     q: "Je to stejné jako výuční list?",
-    a: "Ne. Výuční list se získává studiem na odborné střední škole. NSK kvalifikace je určená pro dospělé – dá se složit na základě kurzu a zkoušky, bez tříletého studia.",
+    a: "Ne. Výuční list se získává studiem na odborné střední škole. NSK kvalifikace je určená pro dospělé, dá se složit na základě kurzu a zkoušky, bez tříletého studia.",
   },
   {
     q: "Co můžu se zkouškou podle NSK dělat dál?",
@@ -29,7 +29,7 @@ const FAQ_LD_ITEMS: { q: string; a: string }[] = [
   },
   {
     q: "Musím už mít praxi v oboru, nebo můžu začít od nuly?",
-    a: "Můžete obojí. Některé zkoušky jsou vhodné i pro začátečníky – zvládnete je s intenzivní přípravou. Pokud už máte praxi, budete mít výhodu, ale není to podmínkou.",
+    a: "Můžete obojí. Některé zkoušky jsou vhodné i pro začátečníky, zvládnete je s intenzivní přípravou. Pokud už máte praxi, budete mít výhodu, ale není to podmínkou.",
   },
   {
     q: "Kolik času mi zabere příprava?",
@@ -45,11 +45,11 @@ const FAQ_LD_ITEMS: { q: string; a: string }[] = [
   },
   {
     q: "Kolik to stojí a co je v ceně?",
-    a: "Cenu najdete u každého kurzu. V ceně je výuka, podklady i příprava ke zkoušce. Neplatíte žádné skryté poplatky – vše vám vysvětlíme předem.",
+    a: "Cenu najdete u každého kurzu. V ceně je výuka, podklady i příprava ke zkoušce. Neplatíte žádné skryté poplatky, vše vám vysvětlíme předem.",
   },
   {
     q: "Co když mi nevyhovuje termín kurzu nebo zkoušky?",
-    a: "Ozvěte se nám – v mnoha případech umíme najít individuální řešení. Přípravu můžeme přizpůsobit vašemu času, případně domluvit individuální konzultace nebo náhradní termín.",
+    a: "Ozvěte se nám, v mnoha případech umíme najít individuální řešení. Přípravu můžeme přizpůsobit vašemu času, případně domluvit individuální konzultace nebo náhradní termín.",
   },
 ];
 
@@ -72,7 +72,7 @@ const GROUP_A: FaqItem[] = [
   },
   {
     q: "Je to stejné jako výuční list?",
-    a: "Ne. Výuční list se získává studiem na odborné střední škole. NSK kvalifikace je určená pro dospělé – dá se složit na základě kurzu a zkoušky, bez tříletého studia.",
+    a: "Ne. Výuční list se získává studiem na odborné střední škole. NSK kvalifikace je určená pro dospělé, dá se složit na základě kurzu a zkoušky, bez tříletého studia.",
   },
   {
     q: "Co můžu se zkouškou podle NSK dělat dál?",
@@ -114,7 +114,7 @@ const GROUP_A: FaqItem[] = [
 const GROUP_B: FaqItem[] = [
   {
     q: "Musím už mít praxi v oboru, nebo můžu začít od nuly?",
-    a: "Můžete obojí. Některé zkoušky jsou vhodné i pro začátečníky – zvládnete je s intenzivní přípravou. Pokud už máte praxi, budete mít výhodu, ale není to podmínkou.",
+    a: "Můžete obojí. Některé zkoušky jsou vhodné i pro začátečníky, zvládnete je s intenzivní přípravou. Pokud už máte praxi, budete mít výhodu, ale není to podmínkou.",
   },
   {
     q: "Kolik času mi zabere příprava?",
@@ -139,13 +139,13 @@ const GROUP_B: FaqItem[] = [
 const GROUP_C: FaqItem[] = [
   {
     q: "Kolik to stojí a co je v ceně?",
-    a: "Cenu najdete u každého kurzu. V ceně je výuka, podklady i příprava ke zkoušce. Neplatíte žádné skryté poplatky – vše vám vysvětlíme předem.",
+    a: "Cenu najdete u každého kurzu. V ceně je výuka, podklady i příprava ke zkoušce. Neplatíte žádné skryté poplatky, vše vám vysvětlíme předem.",
   },
   {
     q: "Co když mi nevyhovuje termín kurzu nebo zkoušky?",
     a: (
       <>
-        Ozvěte se nám – v mnoha případech umíme najít individuální řešení.
+        Ozvěte se nám, v mnoha případech umíme najít individuální řešení.
         Přípravu můžeme přizpůsobit vašemu času, případně domluvit{" "}
         <strong className="faq-strong">
           individuální konzultace nebo náhradní termín.
@@ -250,7 +250,7 @@ export default function FaqPage() {
               </h2>
               <p className="faq-reassure__desc">
                 Jasné zadání, praktický trénink a zpětná vazba. Žádné
-                překvapení u zkoušky – budete přesně vědět, co čekat.
+                překvapení u zkoušky, budete přesně vědět, co čekat.
               </p>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function FaqPage() {
           <div className="faq-cta__inner">
             <Heading as="h2">Nenašli jste odpověď?</Heading>
             <p className="faq-cta__text">
-              Napište nám nebo zavolejte – rádi vám poradíme s výběrem i s
+              Napište nám nebo zavolejte, rádi vám poradíme s výběrem i s
               administrativou.
             </p>
             <Button
