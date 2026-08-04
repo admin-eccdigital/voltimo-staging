@@ -70,8 +70,11 @@ export function LpPrice() {
               fakturou, žádné zálohy ani splátky.
             </p>
             <p className="lp-price__fine">
-              Tento kompletní kurz úřad práce nehradí. Rekvalifikaci přes ÚP
-              řešíme samostatně, napište nám.
+              Tento kompletní kurz úřad práce nehradí. Chcete přes ÚP? Máme{" "}
+              <a href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/rekvalifikace/`}>
+                samostatnou rekvalifikaci
+              </a>
+              .
             </p>
           </div>
         </div>
