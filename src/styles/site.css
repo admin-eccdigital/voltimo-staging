@@ -122,7 +122,17 @@
   padding-bottom: var(--space-xl); border-bottom: 1px solid var(--border-dark);
 }
 .site-footer__brand { max-width: 440px; }
-.site-footer__brand img { margin-bottom: 16px; }
+.site-footer__brand > img { margin-bottom: 16px; }
+.site-footer__lock { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.site-footer__lock img { height: 44px; width: auto; display: block; }
+.site-footer__wm {
+  font-family: var(--font-sans); font-size: 26px; font-weight: var(--fw-semibold);
+  letter-spacing: 0.02em; line-height: 1; color: var(--voltimo-yellow);
+}
+.site-footer__wm small {
+  display: block; margin-top: 4px; font-size: 11px; font-weight: var(--fw-semibold);
+  letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6);
+}
 .site-footer__brand p {
   font-size: var(--fs-small); line-height: var(--lh-body);
   color: rgba(255,255,255,0.70); margin: 0;

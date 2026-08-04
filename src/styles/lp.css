@@ -300,9 +300,9 @@
 .lp-reassure__ic svg { width: 20px; height: 20px; }
 .lp-reassure strong { display: block; font-size: 15px; font-weight: var(--fw-bold); color: var(--text-heading); }
 .lp-reassure span { font-size: 14px; color: var(--text-muted); line-height: 1.45; }
-.lp-reg__call { background: var(--voltimo-primary); color: #fff; border-radius: var(--radius-lg); padding: 24px; }
-.lp-reg__call small { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--voltimo-yellow); font-weight: var(--fw-semibold); }
-.lp-reg__call a { display: inline-flex; align-items: center; gap: 10px; margin-top: 8px; font-size: 22px; font-weight: var(--fw-bold); color: #fff; text-decoration: none; }
+.lp-reg__call { background: var(--voltimo-primary); color: #fff; border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+.lp-reg__call small { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--voltimo-yellow); font-weight: var(--fw-semibold); }
+.lp-reg__call a { display: inline-flex; align-items: center; gap: 10px; font-size: 22px; font-weight: var(--fw-bold); color: #fff; text-decoration: none; }
 .lp-reg__call a svg { width: 22px; height: 22px; color: var(--voltimo-yellow); }
 
 /* success state */

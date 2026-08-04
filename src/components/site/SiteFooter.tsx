@@ -41,15 +41,21 @@ export function SiteFooter() {
       <div className="site-footer__main">
         <div className="site-footer__top">
           <div className="site-footer__brand">
-            <img
-              src={`${basePath}/logo/logo-voltimo-inverse.svg`}
-              alt="Voltimo"
-              width={140}
-              height={37}
-            />
+            <span className="site-footer__lock">
+              <img
+                src={`${basePath}/logo/logo-voltimo-mark.svg`}
+                alt="Voltimo"
+                width={44}
+                height={44}
+              />
+              <span className="site-footer__wm">
+                Voltimo
+                <small>Středisko profesního vzdělávání</small>
+              </span>
+            </span>
             <p>
-              Středisko profesního vzdělávání v elektrotechnice. Výcvik, ne
-              škola. Praxe, zkouška §6 a státní osvědčení Elektrikář.
+              V elektrotechnice, chlazení a klimatizacích. Výcvik, ne škola.
+              Praxe, zkoušky podle NSK a státní osvědčení.
             </p>
           </div>
         </div>
