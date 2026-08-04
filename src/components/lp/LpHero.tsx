@@ -61,7 +61,7 @@ export function LpHero() {
         <HeroItem>
           <div className="lp-urgency">
             <span className="lp-urgency__dot" />
-            <span>Ušetříte {LP_DATA.price.discount.toLocaleString("cs-CZ")} Kč</span>
+            <span>Prázdninová sleva 20 %</span>
             <span className="lp-urgency__chip">
               při registraci do {LP_DATA.price.deadline}
             </span>

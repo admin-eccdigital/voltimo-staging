@@ -7,7 +7,7 @@ export const LP_DATA = {
     regular: 50_000,
     current: 40_000,
     discount: 10_000,
-    deadline: "30. 6. 2026",
+    deadline: "31. 8. 2026",
   },
   stats: {
     graduates: "300+",

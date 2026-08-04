@@ -21,7 +21,7 @@ export function LpPrice() {
       <div className="lp-wrap">
         <div className="lp-head lp-head--center">
           <Eyebrow>Cena kurzu</Eyebrow>
-          <Heading level={2}>Jedna cena. Teď s akční slevou 20 %.</Heading>
+          <Heading level={2}>Jedna cena. Teď s prázdninovou slevou 20 %.</Heading>
           <p className="lp-head__sub">
             Kompletní 10denní výcvik včetně všech 5 zkoušek a §6. Žádné skryté
             poplatky.
@@ -32,7 +32,7 @@ export function LpPrice() {
             <div className="lp-price__head">
               <span className="lp-price__variant">10denní kurz Elektrikář</span>
               <span className="lp-price__disc">
-                Akční sleva 20 % · platí pouze do {price.deadline}
+                Prázdninová sleva 20 % · platí pouze do {price.deadline}
               </span>
             </div>
             <div className="lp-price__amounts">
