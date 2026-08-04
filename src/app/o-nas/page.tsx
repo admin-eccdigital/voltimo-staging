@@ -95,7 +95,7 @@ export default function ONasPage() {
           <FadeIn>
             <div className="onas-gallery__main">
               <Image
-                src={`${basePath}/photos/o-nas/ucebna-main.png`}
+                src={`${basePath}/photos/o-nas/ucebna-main.jpg`}
                 alt="Učebna Voltimo v Přešticích"
                 width={1200}
                 height={514}
@@ -208,7 +208,7 @@ export default function ONasPage() {
             </p>
             <div className="onas-why__photo">
               <Image
-                src={`${basePath}/photos/o-nas/rozvadec-praxe.png`}
+                src={`${basePath}/photos/o-nas/rozvadec-praxe.jpg`}
                 alt="Praktický výcvik na rozvaděči ve Voltimo"
                 width={440}
                 height={352}
