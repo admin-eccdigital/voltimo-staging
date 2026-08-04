@@ -232,6 +232,36 @@ export default function ChlazeniPage() {
         </div>
       </section>
 
+      {/* LEKTOR */}
+      <section className="vlt-section vlt-section--subtle">
+        <div className="lp-wrap">
+          <div className="chl-lektor">
+            <div className="chl-lektor__photo">
+              <Image
+                src={`${basePath}/photos/lektor-jasansky.jpg`}
+                alt="Lektor Jan Jasanský v dílně Voltimo"
+                width={480}
+                height={600}
+                style={{ objectFit: "cover", objectPosition: "center 20%", width: "100%", height: "100%" }}
+              />
+            </div>
+            <div className="chl-lektor__text">
+              <FadeIn>
+                <div className="lp-head">
+                  <Eyebrow>Kdo vás povede</Eyebrow>
+                  <Heading level={2}>Jan Jasanský</Heading>
+                  <p className="lp-head__sub">
+                    Lektor pro elektro i chlazení. Učí prakticky, na reálných
+                    okruzích. Vysvětlí vám přesně to, co potřebujete u zkoušky
+                    i na zakázce.
+                  </p>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CO LIDEM BĚŽÍ HLAVOU */}
       <section className="vlt-section vlt-section--dark">
         <div className="lp-wrap">

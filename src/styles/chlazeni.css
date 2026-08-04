@@ -142,3 +142,9 @@
 .chl-note{margin-top:22px;font-size:15px;line-height:var(--lh-body);color:var(--text-muted)}
 .chl-note a{color:var(--voltimo-sky);font-weight:var(--fw-semibold);text-decoration:none}
 .chl-note a:hover{text-decoration:underline}
+
+/* ---- Lektor ---- */
+.chl-lektor{display:grid;grid-template-columns:340px 1fr;gap:44px;align-items:center}
+.chl-lektor__photo{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow-md);background:var(--surface-subtle)}
+.chl-lektor__photo img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:720px){.chl-lektor{grid-template-columns:1fr;gap:24px}.chl-lektor__photo{max-width:300px}}

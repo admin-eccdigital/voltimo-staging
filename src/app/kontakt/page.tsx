@@ -85,6 +85,10 @@ export default function KontaktPage() {
                   <br />
                   334 01 Přeštice
                 </span>
+                <span className="kt-card__desc">
+                  Areál STS Přeštice, budova B, přízemí. Při vstupu chodbou
+                  doleva.
+                </span>
                 <span className="kt-card__link">
                   Zobrazit na mapě <ArrowUpRight size={15} />
                 </span>

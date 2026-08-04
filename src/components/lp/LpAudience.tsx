@@ -1,4 +1,4 @@
-import { Check, X, Wrench } from "lucide-react";
+import { Check, X, Wrench, ClipboardCheck } from "lucide-react";
 import { Section, Eyebrow, Heading } from "@/components/brand";
 import { FadeIn } from "./FadeIn";
 
@@ -69,6 +69,16 @@ export function LpAudience() {
             Ze zručného člověka uděláme kvalifikovaného. Rok pak ještě děláte
             pod někým zkušenějším, než jedete úplně sami. Ale start máte za 10
             dní.
+          </p>
+        </div>
+
+        <div className="lp-aud__note">
+          <span className="lp-aud__note-ic">
+            <ClipboardCheck />
+          </span>
+          <p>
+            <strong>Požadavky:</strong> je vám 18 let a doložíte zdravotní
+            způsobilost od lékaře. Výuční list ani praxe nejsou podmínkou.
           </p>
         </div>
       </div>

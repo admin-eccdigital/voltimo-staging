@@ -19,8 +19,8 @@ export function LpTeacher() {
                 style={{ objectFit: "cover", objectPosition: "62% 30%" }}
               />
               <div className="lp-teacher__cap">
-                <strong>Mistr odborného výcviku</strong>
-                <span>30 let praxe v oboru</span>
+                <strong>Bohumír Sobotka</strong>
+                <span>Mistr odborného výcviku · 30 let praxe</span>
               </div>
             </div>
           </div>
