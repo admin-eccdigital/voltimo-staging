@@ -112,7 +112,7 @@ export default function KontaktPage() {
           <div className="kt-map__inner">
             <div className="kt-map__frame">
               <iframe
-                src="https://www.openstreetmap.org/export/embed.html?bbox=13.3240%2C49.5690%2C13.3440%2C49.5790&amp;layer=mapnik&amp;marker=49.5740%2C13.3340"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=13.3069%2C49.5701%2C13.3269%2C49.5801&amp;layer=mapnik&amp;marker=49.5751%2C13.3169"
                 className="kt-map__iframe"
                 loading="lazy"
                 title="Mapa — Husova 380, Přeštice"

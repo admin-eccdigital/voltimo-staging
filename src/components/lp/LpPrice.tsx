@@ -69,6 +69,10 @@ export function LpPrice() {
               Při rezervaci nic neplatíte. Kurz se hradí celou částkou předem
               fakturou, žádné zálohy ani splátky.
             </p>
+            <p className="lp-price__fine">
+              Tento kompletní kurz úřad práce nehradí. Rekvalifikaci přes ÚP
+              řešíme samostatně, napište nám.
+            </p>
           </div>
         </div>
       </div>
