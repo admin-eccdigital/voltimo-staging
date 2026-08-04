@@ -60,18 +60,18 @@
 
 /* urgency strip */
 .lp-urgency {
-  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
   width: max-content; max-width: 100%;
   background: var(--voltimo-yellow);
-  border-radius: var(--radius-full); padding: 10px 10px 10px 20px;
-  font-size: 15px; font-weight: var(--fw-bold); line-height: 1;
+  border-radius: var(--radius-full); padding: 13px 13px 13px 26px;
+  font-size: 18px; font-weight: var(--fw-bold); line-height: 1;
   color: var(--voltimo-primary);
-  box-shadow: 0 8px 26px rgba(249, 222, 116, 0.42);
+  box-shadow: 0 10px 30px rgba(249, 222, 116, 0.45);
   animation: lp-urgency-pulse 2.4s ease-in-out infinite;
 }
 .lp-urgency > span:not(.lp-urgency__dot):not(.lp-urgency__chip) { white-space: nowrap; }
-.lp-urgency__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--voltimo-primary); box-shadow: 0 0 0 4px rgba(30, 56, 118, 0.15); flex: none; }
-.lp-urgency__chip { background: var(--voltimo-primary); color: #fff; border-radius: var(--radius-full); padding: 7px 15px; font-weight: var(--fw-bold); white-space: nowrap; }
+.lp-urgency__dot { width: 12px; height: 12px; border-radius: 50%; background: var(--voltimo-primary); box-shadow: 0 0 0 5px rgba(30, 56, 118, 0.15); flex: none; }
+.lp-urgency__chip { background: var(--voltimo-primary); color: #fff; border-radius: var(--radius-full); padding: 10px 18px; font-size: 16px; font-weight: var(--fw-bold); white-space: nowrap; }
 @keyframes lp-urgency-pulse {
   0%, 100% { box-shadow: 0 8px 26px rgba(249, 222, 116, 0.42); }
   50% { box-shadow: 0 8px 36px rgba(249, 222, 116, 0.70); }
