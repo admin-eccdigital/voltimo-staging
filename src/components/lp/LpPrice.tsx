@@ -66,7 +66,8 @@ export function LpPrice() {
               Rezervovat za {price.current.toLocaleString("cs-CZ")} Kč
             </Button>
             <p className="lp-price__fine">
-              Bez platby předem. Cenu i termín potvrdíte online.
+              Při rezervaci nic neplatíte. Kurz se hradí celou částkou předem
+              fakturou – žádné zálohy ani splátky.
             </p>
           </div>
         </div>

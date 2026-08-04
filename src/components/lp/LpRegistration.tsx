@@ -124,8 +124,8 @@ export function LpRegistration() {
                     Rezervovat termín nezávazně
                   </Button>
                   <p className="lp-form__fine">
-                    Bez závazků a bez platby předem. Termín potvrdíte online,
-                    bez nutnosti volat.
+                    Rezervace je nezávazná – při rezervaci nic neplatíte. Termín
+                    potvrdíte online, bez nutnosti volat.
                   </p>
                 </form>
               </>
@@ -169,7 +169,7 @@ export function LpRegistration() {
               </li>
             </ul>
             <div className="lp-reg__call">
-              <small>Radši osobně?</small>
+              <small>Chcete to vyřídit hned? Zavolejte.</small>
               <a href={LP_DATA.phoneHref}>
                 <Phone />
                 {LP_DATA.phone}
