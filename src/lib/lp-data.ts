@@ -21,7 +21,7 @@ export const LP_DATA = {
       title: "Srpnový běh",
       range: "Příprava 24. – 28. 8. · zkoušky 31. 8. – 4. 9. 2026",
       cap: "Volná místa",
-      capLevel: "ok" as const,
+      capLevel: "ok" as "low" | "ok",
       featured: true,
     },
     {
@@ -30,7 +30,7 @@ export const LP_DATA = {
       title: "Říjnový běh",
       range: "Příprava 12. – 16. 10. · zkoušky 19. – 23. 10. 2026",
       cap: "Volná místa",
-      capLevel: "ok" as const,
+      capLevel: "ok" as "low" | "ok",
       featured: false,
     },
     {
@@ -39,7 +39,7 @@ export const LP_DATA = {
       title: "Listopadový běh",
       range: "Příprava 9. – 13. 11. · zkoušky 16. – 20. 11. 2026",
       cap: "Volná místa",
-      capLevel: "ok" as const,
+      capLevel: "ok" as "low" | "ok",
       featured: false,
     },
   ],
