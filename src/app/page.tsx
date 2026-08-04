@@ -9,7 +9,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const metadata: Metadata = {
   title: "Voltimo — Středisko profesního vzdělávání",
   description:
-    "Opravdová kvalifikace. Opravdové řemeslo. Získejte celostátní osvědčení a práci, která má budoucnost. Přeštice, Plzeňsko.",
+    "Z praxe ke kvalifikaci nejkratší cestou. Státní osvědčení, které uznává úřad i zaměstnavatel a otevře cestu na vlastní živnost. Přeštice, Plzeňsko.",
 };
 
 const STEPS: readonly { title: string; text: string }[] = [
