@@ -71,6 +71,7 @@ const FAQ = [
   { q: "Co když zkoušku neudělám napoprvé?", a: "Můžete ji opakovat. Naše příprava ale stojí přesně na tom, abyste prošli napoprvé." },
   { q: "Kde to probíhá?", a: "V Přešticích, v naší učebně a praktických dílnách. Prezenčně. Na řemeslo si musíte sáhnout." },
   { q: "Co potřebuji s sebou?", a: "Platný občanský průkaz a lékařské potvrzení o zdravotní způsobilosti (formulář pošleme po přihlášce). Pracovní oblečení a obuv." },
+  { q: "A co F-plyny?", a: "Pro samostatnou práci s chladivy potřebujete kromě profesní kvalifikace i certifikát na F-plyny. Autorizaci na F-plyny očekáváme během září 2026. Kdo u nás absolvuje kurz chlazení teď, dostane F-plyny se slevou." },
 ] as const;
 
 const CHL_DATES = [
@@ -361,6 +362,12 @@ export default function ChlazeniPage() {
                 Nemáte elektro vzdělání a budete k živnosti potřebovat i odbornou způsobilost §6?
                 Zajistíme i to,{" "}
                 <a href={`${basePath}/elektrikar-za-10-dni/`}>elektro u nás děláme také</a>.
+              </p>
+              <p className="chl-note chl-note--fplyn">
+                <strong>F-plyny brzy u nás.</strong> Pro samostatnou práci s
+                chladivy je potřeba i certifikát na F-plyny. Autorizaci
+                očekáváme během září 2026. Kdo u nás absolvuje chlazení teď,
+                dostane F-plyny se slevou.
               </p>
               <div style={{ marginTop: 22 }}>
                 <Button variant="cta" size="lg" icon={<ArrowRight />} href="#poptavka">
