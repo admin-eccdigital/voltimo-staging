@@ -21,7 +21,7 @@ export function LpDates() {
           <Heading level={2}>Vyberte si běh a držte si místo.</Heading>
           <p className="lp-head__sub">
             Všechny běhy probíhají prezenčně v Přešticích na Plzeňsku. Kapacita
-            každého běhu je omezená. Rezervace je nezávazná – termín potvrdíte
+            každého běhu je omezená. Rezervace je nezávazná, termín potvrdíte
             online, bez čekání na telefon.
           </p>
         </div>

@@ -124,7 +124,7 @@ export function LpRegistration() {
                     Rezervovat termín nezávazně
                   </Button>
                   <p className="lp-form__fine">
-                    Rezervace je nezávazná – při rezervaci nic neplatíte. Termín
+                    Rezervace je nezávazná, při rezervaci nic neplatíte. Termín
                     potvrdíte online, bez nutnosti volat.
                   </p>
                 </form>

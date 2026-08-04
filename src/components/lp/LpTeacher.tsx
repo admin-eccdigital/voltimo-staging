@@ -36,7 +36,7 @@ export function LpTeacher() {
             </p>
             <p className="lp-why__p">
               Těch 30 let vydestiloval do 40 hodin praktického výcviku. Žádné
-              měsíce u videí a teorie – jen to, co fakt potřebujete do práce i
+              měsíce u videí a teorie. Jen to, co fakt potřebujete do práce i
               ke zkoušce.
             </p>
 
@@ -56,9 +56,9 @@ export function LpTeacher() {
 
             <p className="lp-why__punch">
               <strong>
-                Není to méně než konkurence – je to to nejdůležitější z 30 let.
+                Co vás jinde učí rok, u nás zvládnete rukama za 10 dní.
               </strong>{" "}
-              Škola vás učí rok to, co u nás dáte za 10 dní prakticky.
+              Jen to podstatné z 30 let praxe.
             </p>
           </div>
         </div>

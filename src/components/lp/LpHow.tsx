@@ -73,7 +73,7 @@ export function LpHow() {
             <strong>
               Učí se u nás osobně, v Přešticích na Plzeňsku.
             </strong>{" "}
-            Je to prezenční výcvik v reálné dílně – online ani na dálku to
+            Je to prezenční výcvik v reálné dílně. Online ani na dálku to
             nejde, na řemeslo si musíte sáhnout. Počítejte s cestou a
             naplánujte si dojíždění.
           </p>

@@ -30,14 +30,14 @@ export function LpHero() {
         </HeroItem>
 
         <HeroItem>
-          <p className="lp-hero__claim">Pro šikovné lidi, kteří chtějí papír.</p>
+          <p className="lp-hero__claim">Pro šikovné lidi, co chtějí papír.</p>
         </HeroItem>
 
         <HeroItem>
           <p className="lp-hero__lead">
-            Úplná kvalifikace Elektrikář za 10 dní výcviku. Žádné měsíce u videí
-            a teorie – jen praxe, zkouška §6 a státní osvědčení. Nemusíte mít
-            školu, stačí mít ruce a chuť.
+            Úplná kvalifikace za 10 dní. Žádné měsíce u videí. Jen praxe,
+            zkouška §6 a státní osvědčení. Školu mít nemusíte, stačí ruce a
+            chuť.
           </p>
         </HeroItem>
 

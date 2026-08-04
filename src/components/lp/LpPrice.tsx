@@ -67,7 +67,7 @@ export function LpPrice() {
             </Button>
             <p className="lp-price__fine">
               Při rezervaci nic neplatíte. Kurz se hradí celou částkou předem
-              fakturou – žádné zálohy ani splátky.
+              fakturou, žádné zálohy ani splátky.
             </p>
           </div>
         </div>

@@ -65,13 +65,10 @@ export function LpAudience() {
             <Wrench />
           </span>
           <p>
-            <strong>
-              Umíte se šroubovákem a jste manuálně zručný? Pak jste pro nás
-              dobrý uchazeč.
-            </strong>{" "}
-            Ze zručného člověka uděláme kvalifikovaného. Pak ještě rok pracujete
-            pod vedením zkušenějšího, než budete úplně samostatný – ale start
-            máte za 10 dní.
+            <strong>Umíte se šroubovákem? Pak jste pro nás dobrý uchazeč.</strong>{" "}
+            Ze zručného člověka uděláme kvalifikovaného. Rok pak ještě děláte
+            pod někým zkušenějším, než jedete úplně sami. Ale start máte za 10
+            dní.
           </p>
         </div>
       </div>
