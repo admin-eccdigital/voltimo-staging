@@ -132,6 +132,56 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* DUŠE ŠKOLY */}
+      <section className="hp-soul">
+        <div className="hp-soul__decor" aria-hidden="true">
+          <div className="hp-soul__glow" />
+          <svg
+            className="hp-soul__shape hp-soul__shape--check"
+            viewBox="0 0 100 100"
+          >
+            <path
+              d="M18 54 L32 41 L47 59 L79 18 L93 30 L47 83 Z"
+              fill="#F9DE74"
+            />
+          </svg>
+          <svg
+            className="hp-soul__shape hp-soul__shape--circle"
+            viewBox="0 0 100 100"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              r="45"
+              fill="none"
+              stroke="#F9DE74"
+              strokeWidth="5"
+            />
+          </svg>
+        </div>
+        <div className="hp-soul__inner">
+          <FadeIn>
+            <Eyebrow tone="ondark" className="hp-soul__eyebrow">
+              O nás
+            </Eyebrow>
+          </FadeIn>
+          <FadeIn>
+            <blockquote className="hp-soul__quote">
+              „Jsme malá škola. Děláme ze šikovných lidí{" "}
+              <span className="hp-soul__accent">kvalifikované</span>, rychle a
+              tak, aby odcházeli spokojení a s jistotou."
+            </blockquote>
+          </FadeIn>
+          <div className="hp-soul__cols">
+            {SOUL_COLS.map((text, i) => (
+              <FadeIn key={i}>
+                <p className="hp-soul__col">{text}</p>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* VYBERTE SI OBOR */}
       <section className="hp-choose" id="kurzy">
         <div className="hp-choose__inner">
@@ -186,56 +236,6 @@ export default function HomePage() {
               </span>
             </a>
           </FadeIn>
-        </div>
-      </section>
-
-      {/* DUŠE ŠKOLY */}
-      <section className="hp-soul">
-        <div className="hp-soul__decor" aria-hidden="true">
-          <div className="hp-soul__glow" />
-          <svg
-            className="hp-soul__shape hp-soul__shape--check"
-            viewBox="0 0 100 100"
-          >
-            <path
-              d="M18 54 L32 41 L47 59 L79 18 L93 30 L47 83 Z"
-              fill="#F9DE74"
-            />
-          </svg>
-          <svg
-            className="hp-soul__shape hp-soul__shape--circle"
-            viewBox="0 0 100 100"
-          >
-            <circle
-              cx="50"
-              cy="50"
-              r="45"
-              fill="none"
-              stroke="#F9DE74"
-              strokeWidth="5"
-            />
-          </svg>
-        </div>
-        <div className="hp-soul__inner">
-          <FadeIn>
-            <Eyebrow tone="ondark" className="hp-soul__eyebrow">
-              O nás
-            </Eyebrow>
-          </FadeIn>
-          <FadeIn>
-            <blockquote className="hp-soul__quote">
-              „Jsme malá škola. Děláme ze šikovných lidí{" "}
-              <span className="hp-soul__accent">kvalifikované</span>, rychle a
-              tak, aby odcházeli spokojení a s jistotou."
-            </blockquote>
-          </FadeIn>
-          <div className="hp-soul__cols">
-            {SOUL_COLS.map((text, i) => (
-              <FadeIn key={i}>
-                <p className="hp-soul__col">{text}</p>
-              </FadeIn>
-            ))}
-          </div>
         </div>
       </section>
 
