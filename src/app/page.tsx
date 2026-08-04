@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowRight, GraduationCap } from "lucide-react";
+import { ArrowRight, GraduationCap, Landmark } from "lucide-react";
 import { Button, Eyebrow, Heading } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
 
@@ -132,6 +132,67 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* VYBERTE SI OBOR */}
+      <section className="hp-choose" id="kurzy">
+        <div className="hp-choose__inner">
+          <FadeIn>
+            <div className="hp-choose__head">
+              <Eyebrow>Vyberte si obor</Eyebrow>
+              <Heading as="h2">Co chcete dělat?</Heading>
+            </div>
+          </FadeIn>
+          <div className="hp-choose__cards">
+            <FadeIn>
+              <a className="hp-pick hp-pick--e" href={`${basePath}/elektrikar-za-10-dni/`}>
+                <span className="hp-pick__kicker">Kompletní kvalifikace</span>
+                <h3 className="hp-pick__title">Elektrikář za 10 dní</h3>
+                <p className="hp-pick__desc">
+                  5 profesních kvalifikací, zkouška §6 a státní osvědčení. Školu
+                  mít nemusíte.
+                </p>
+                <span className="hp-pick__price">
+                  od 40 000 Kč <small>sleva 20 %</small>
+                </span>
+                <span className="hp-pick__go">
+                  Chci být elektrikář <ArrowRight size={17} />
+                </span>
+              </a>
+            </FadeIn>
+            <FadeIn>
+              <a className="hp-pick hp-pick--c" href={`${basePath}/chlazeni/`}>
+                <span className="hp-pick__kicker">23-054 + 23-055</span>
+                <h3 className="hp-pick__title">Chlazení za 4 dny</h3>
+                <p className="hp-pick__desc">
+                  Dvě osvědčení NSK pro malá i velká chladicí zařízení a tepelná
+                  čerpadla.
+                </p>
+                <span className="hp-pick__price">
+                  od 20 000 Kč <small>sleva 20 %</small>
+                </span>
+                <span className="hp-pick__go">
+                  Chci dělat chlazení <ArrowRight size={17} />
+                </span>
+              </a>
+            </FadeIn>
+          </div>
+          <FadeIn>
+            <a className="hp-choose__strip" href={`${basePath}/rekvalifikace/`}>
+              <span className="hp-choose__strip-icon" aria-hidden="true">
+                <Landmark size={30} />
+              </span>
+              <span className="hp-choose__strip-text">
+                <strong>Jste v evidenci úřadu práce?</strong>
+                Máme rekvalifikaci Elektrikář, kterou hradí úřad práce —
+                spoluúčast 0 Kč.
+              </span>
+              <span className="hp-choose__strip-go">
+                Zjistit víc <ArrowRight size={18} />
+              </span>
+            </a>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* DUŠE ŠKOLY */}
       <section className="hp-soul">
         <div className="hp-soul__decor" aria-hidden="true">
@@ -179,63 +240,6 @@ export default function HomePage() {
               </FadeIn>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* VYBERTE SI OBOR */}
-      <section className="hp-choose" id="kurzy">
-        <div className="hp-choose__inner">
-          <FadeIn>
-            <div className="hp-choose__head">
-              <Eyebrow>Vyberte si obor</Eyebrow>
-              <Heading as="h2">Co chcete dělat?</Heading>
-            </div>
-          </FadeIn>
-          <div className="hp-choose__cards">
-            <FadeIn>
-              <a className="hp-pick hp-pick--e" href={`${basePath}/elektrikar-za-10-dni/`}>
-                <span className="hp-pick__kicker">Kompletní kvalifikace</span>
-                <h3 className="hp-pick__title">Elektrikář za 10 dní</h3>
-                <p className="hp-pick__desc">
-                  5 profesních kvalifikací, zkouška §6 a státní osvědčení. Školu
-                  mít nemusíte.
-                </p>
-                <span className="hp-pick__price">
-                  od 40 000 Kč <small>sleva 20 %</small>
-                </span>
-                <span className="hp-pick__go">
-                  Chci být elektrikář <ArrowRight size={17} />
-                </span>
-              </a>
-            </FadeIn>
-            <FadeIn>
-              <a className="hp-pick hp-pick--c" href={`${basePath}/chlazeni/`}>
-                <span className="hp-pick__kicker">23-054 + 23-055</span>
-                <h3 className="hp-pick__title">Chlazení za 4 dny</h3>
-                <p className="hp-pick__desc">
-                  Dvě osvědčení NSK pro malá i velká chladicí zařízení a tepelná
-                  čerpadla.
-                </p>
-                <span className="hp-pick__price">
-                  od 20 000 Kč <small>sleva 20 %</small>
-                </span>
-                <span className="hp-pick__go">
-                  Chci dělat chlazení <ArrowRight size={17} />
-                </span>
-              </a>
-            </FadeIn>
-          </div>
-          <FadeIn>
-            <a className="hp-choose__strip" href={`${basePath}/rekvalifikace/`}>
-              <span>
-                <strong>Jste v evidenci úřadu práce?</strong> Máme rekvalifikaci
-                Elektrikář, kterou hradí ÚP, spoluúčast 0 Kč.
-              </span>
-              <span className="hp-choose__strip-go">
-                Rekvalifikace <ArrowRight size={16} />
-              </span>
-            </a>
-          </FadeIn>
         </div>
       </section>
 

@@ -282,10 +282,23 @@
 .hp-pick__go svg { transition: transform var(--transition); }
 .hp-pick:hover .hp-pick__go svg { transform: translateX(3px); }
 .hp-choose__strip {
-  margin-top: 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
-  background: var(--voltimo-primary); color: #fff; border-radius: var(--radius-lg); padding: 18px 24px;
-  text-decoration: none; font-size: 15px;
+  margin-top: 28px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
+  background: var(--voltimo-primary); color: #fff; border-radius: var(--radius-lg);
+  padding: 26px 30px; text-decoration: none; font-size: 17px; line-height: 1.5;
+  box-shadow: 0 12px 30px rgba(30, 56, 118, 0.22);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
-.hp-choose__strip strong { color: var(--voltimo-yellow); }
-.hp-choose__strip-go { display: inline-flex; align-items: center; gap: 8px; background: var(--voltimo-yellow); color: var(--voltimo-primary); border-radius: var(--radius-full); padding: 9px 16px; font-weight: var(--fw-bold); font-size: 14px; white-space: nowrap; }
-@media (max-width: 640px) { .hp-choose__cards { grid-template-columns: 1fr; } }
+.hp-choose__strip:hover { transform: translateY(-2px); box-shadow: 0 16px 38px rgba(30, 56, 118, 0.30); }
+.hp-choose__strip-icon {
+  display: flex; align-items: center; justify-content: center; flex: none;
+  width: 60px; height: 60px; border-radius: var(--radius-full);
+  background: var(--voltimo-yellow); color: var(--voltimo-primary);
+}
+.hp-choose__strip-text { flex: 1 1 300px; display: flex; flex-direction: column; gap: 5px; }
+.hp-choose__strip strong { color: var(--voltimo-yellow); font-size: 20px; font-weight: var(--fw-bold); line-height: 1.25; }
+.hp-choose__strip-go { display: inline-flex; align-items: center; gap: 8px; background: var(--voltimo-yellow); color: var(--voltimo-primary); border-radius: var(--radius-full); padding: 13px 24px; font-weight: var(--fw-bold); font-size: 15px; white-space: nowrap; }
+@media (max-width: 640px) {
+  .hp-choose__cards { grid-template-columns: 1fr; }
+  .hp-choose__strip { padding: 22px; gap: 16px; }
+  .hp-choose__strip-go { width: 100%; justify-content: center; }
+}
