@@ -135,8 +135,8 @@ export default function ONasPage() {
           <div className="onas-mission__inner">
             <Eyebrow>Naše mise</Eyebrow>
             <h2 className="onas-mission__h2">
-              Naší misí je dát lidem jistotu, že vědí, co dělají – a že to
-              zvládnou.
+              Děláme z lidí z praxe kvalifikované řemeslníky. V nejkratším čase
+              a tak, aby odcházeli s jistotou a spokojení.
             </h2>
             <p className="onas-mission__text">
               Ve Středisku profesního vzdělávání VOLTIMO věříme, že{" "}
@@ -163,7 +163,8 @@ export default function ONasPage() {
                   Proč?
                 </span>
                 <p className="onas-golden__answer onas-golden__answer--lg">
-                  Protože věříme, že řemeslo může změnit život.
+                  Protože řemeslo umí změnit život. A v době AI bude ještě
+                  cennější.
                 </p>
               </div>
             </FadeIn>
@@ -202,9 +203,8 @@ export default function ONasPage() {
               Protože vás chceme opravdu něco naučit.
             </Heading>
             <p className="onas-why__lead">
-              Středisko profesního vzdělávání VOLTIMO není škola „naoko". Jsme
-              místo, kde vám pomůžeme získat skutečnou kvalifikaci – a vědět,
-              co děláte.
+              Pomůžeme vám získat opravdovou kvalifikaci a odejít s tím, že
+              víte, co děláte.
             </p>
             <div className="onas-why__photo">
               <Image
