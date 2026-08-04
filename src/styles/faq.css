@@ -142,3 +142,5 @@
   margin: 0 0 30px; color: var(--text-muted);
   font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem); line-height: 1.6;
 }
+
+.faq-item__answer a { color: var(--text-link-accent); text-decoration: underline; font-weight: var(--fw-semibold); }

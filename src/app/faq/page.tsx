@@ -68,7 +68,20 @@ type FaqItem = { q: string; a: ReactNode };
 const GROUP_A: FaqItem[] = [
   {
     q: "Co je to profesní kvalifikace podle NSK?",
-    a: "Je to oficiálně uznávané osvědčení o odbornosti. Získáte ho složením zkoušky dle Národní soustavy kvalifikací. Má váhu u zaměstnavatelů, živnostenského úřadu i státu.",
+    a: (
+      <>
+        Je to oficiálně uznávané osvědčení o odbornosti. Získáte ho složením
+        zkoušky dle Národní soustavy kvalifikací. Má váhu u zaměstnavatelů,
+        živnostenského úřadu i státu.{" "}
+        <a
+          href="https://www.narodnikvalifikace.cz/kvalifikace-578-Monter_monterka_elektrickych_instalaci/revize-3458/kvalifikacni-standard"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Podívejte se na kvalifikační standard.
+        </a>
+      </>
+    ),
   },
   {
     q: "Je to stejné jako výuční list?",
