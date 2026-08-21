@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>A/B test elektrikář — Voltimo</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --navy: #1B2B5A;
+  --navy-soft: #2A3D72;
+  --yellow: #F2D24E;
+  --yellow-muted: #E8C83E;
+  --ground: #FAFAF8;
+  --surface: #fff;
+  --surface-alt: #F0EFE9;
+  --border: #DDD9CE;
+  --text: #2C2F36;
+  --text-muted: #6B6F78;
+  --text-inv: #fff;
+  --code-bg: #F3F1EB;
+  --url-bg: #EEF1F8;
+  --url-border: #C8D0E4;
+  --tag-a: #E8F0E8;
+  --tag-a-text: #2D6B2D;
+  --tag-b: #EDE8F4;
+  --tag-b-text: #5B3D8A;
+  --section-line: #D6D2C8;
+  --status-bg: #FFF8E0;
+  --status-border: #E8D88A;
+  --status-text: #7A6520;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --navy: #8FA4D4;
+    --navy-soft: #6B84B8;
+    --yellow: #F2D24E;
+    --yellow-muted: #C8A830;
+    --ground: #1A1B1E;
+    --surface: #232428;
+    --surface-alt: #2A2B30;
+    --border: #3A3B42;
+    --text: #E0E0E0;
+    --text-muted: #9A9BA2;
+    --text-inv: #1A1B1E;
+    --code-bg: #2A2B30;
+    --url-bg: #252838;
+    --url-border: #3A3F52;
+    --tag-a: #1E3020;
+    --tag-a-text: #7DC87D;
+    --tag-b: #2A2240;
+    --tag-b-text: #B89AE0;
+    --section-line: #3A3B42;
+    --status-bg: #332E1A;
+    --status-border: #5A4F28;
+    --status-text: #D4C060;
+  }
+}
+body {
+  font-family: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+  background: var(--ground);
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+.header { margin-bottom: 2rem; }
+.header__eyebrow {
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--text-muted); margin: 0 0 0.5rem;
+}
+.header__title {
+  font-size: 1.75rem; font-weight: 700; color: var(--navy);
+  margin: 0 0 0.35rem; line-height: 1.2; text-wrap: balance;
+}
+.header__sub { font-size: 1rem; color: var(--text-muted); margin: 0; }
+.status {
+  background: var(--status-bg); border: 1px solid var(--status-border);
+  border-radius: 8px; padding: 14px 16px; margin: 1.25rem 0 2rem;
+  font-size: 0.92rem; color: var(--status-text); line-height: 1.55;
+}
+.status strong { font-weight: 700; }
+.urls { display: grid; gap: 12px; margin: 1.5rem 0; }
+.url-card {
+  background: var(--url-bg); border: 1px solid var(--url-border);
+  border-radius: 8px; padding: 14px 16px; display: flex; align-items: center; gap: 12px;
+}
+.url-card__tag {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 3px 8px; border-radius: 4px;
+  white-space: nowrap; flex: none;
+}
+.url-card__tag--a { background: var(--tag-a); color: var(--tag-a-text); }
+.url-card__tag--b { background: var(--tag-b); color: var(--tag-b-text); }
+.url-card__url {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.82rem;
+  word-break: break-all; color: var(--text);
+}
+.url-card a { color: var(--navy); text-decoration: none; }
+.url-card a:hover { text-decoration: underline; }
+.section {
+  border-top: 1px solid var(--section-line);
+  padding-top: 1.75rem; margin-top: 1.75rem;
+}
+.section__title { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin: 0 0 1rem; }
+.comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1rem 0; }
+@media (max-width: 520px) { .comparison { grid-template-columns: 1fr; } }
+.col {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 16px;
+}
+.col__label {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; margin: 0 0 10px;
+}
+.col__label--a { color: var(--tag-a-text); }
+.col__label--b { color: var(--tag-b-text); }
+.col ul { margin: 0; padding: 0 0 0 1.1rem; font-size: 0.9rem; line-height: 1.55; color: var(--text-muted); }
+.col li { margin-bottom: 4px; }
+.stack-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 1rem 0; }
+.stack-table th {
+  text-align: left; font-weight: 600; color: var(--text);
+  padding: 8px 12px 8px 0; border-bottom: 1px solid var(--border);
+  white-space: nowrap; width: 35%;
+}
+.stack-table td { padding: 8px 0; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+code {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.82em;
+  background: var(--code-bg); padding: 2px 5px; border-radius: 3px;
+}
+.flow {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 20px; margin: 1rem 0;
+}
+.flow__step { display: flex; gap: 12px; align-items: flex-start; }
+.flow__step + .flow__step {
+  margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border);
+}
+.flow__num {
+  flex: none; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--navy); color: var(--text-inv); font-size: 0.75rem;
+  font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px;
+}
+.flow__text { font-size: 0.9rem; color: var(--text-muted); margin: 0; line-height: 1.5; }
+.flow__text strong { color: var(--text); font-weight: 600; }
+.changes { margin: 1rem 0; padding: 0; list-style: none; }
+.changes li {
+  font-size: 0.9rem; color: var(--text-muted); padding: 6px 0;
+  border-bottom: 1px solid var(--border); line-height: 1.5;
+}
+.changes li:last-child { border-bottom: none; }
+.changes li strong { color: var(--text); font-weight: 600; }
+.note {
+  background: var(--surface-alt); border-radius: 8px; padding: 14px 16px;
+  margin: 1.25rem 0 0; font-size: 0.88rem; color: var(--text-muted); line-height: 1.55;
+}
+.note strong { color: var(--text); }
+.todo {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 16px; margin: 1.25rem 0 0;
+}
+.todo__title {
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; color: var(--text-muted); margin: 0 0 10px;
+}
+.todo__item {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; padding: 5px 0;
+}
+.todo__check {
+  flex: none; width: 18px; height: 18px; border: 2px solid var(--border);
+  border-radius: 4px; margin-top: 2px;
+}
+.todo__item strong { color: var(--text); font-weight: 600; }
+.footer {
+  margin-top: 2.5rem; padding-top: 1.25rem;
+  border-top: 1px solid var(--section-line); font-size: 0.82rem; color: var(--text-muted);
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <p class="header__eyebrow">Voltimo &middot; ke schválení</p>
+  <h1 class="header__title">A/B test: Elektrikář landing page</h1>
+  <p class="header__sub">Připraveno k nasazení &middot; Split 50/50 &middot; Čeká na schválení</p>
+</div>
+
+<div class="status">
+  <strong>Stav: na stagingu ke kontrole.</strong> Produkční web (voltimo.cz) zůstává beze změny. A/B test poběží až po schválení varianty B a ověření měření.
+</div>
+
+<p style="font-size:0.92rem;color:var(--text-muted);margin:0 0 0.5rem;">Ukázka obou variant na stagingu:</p>
+
+<div class="urls">
+  <div class="url-card">
+    <span class="url-card__tag url-card__tag--a">Varianta A</span>
+    <span class="url-card__url"><a href="https://admin-eccdigital.github.io/voltimo-staging/elektrikar-za-10-dni/?ab_variant=control">admin-eccdigital.github.io/voltimo-staging/elektrikar-za-10-dni/?ab_variant=control</a></span>
+  </div>
+  <div class="url-card">
+    <span class="url-card__tag url-card__tag--b">Varianta B</span>
+    <span class="url-card__url"><a href="https://admin-eccdigital.github.io/voltimo-staging/elektrikar-za-10-dni/?ab_variant=rekvalifikace">admin-eccdigital.github.io/voltimo-staging/elektrikar-za-10-dni/?ab_variant=rekvalifikace</a></span>
+  </div>
+</div>
+
+<div class="note">
+  <strong>Parametr <code>?ab_variant=</code></strong> vynutí variantu pro prohlížení. Bez parametru se varianta losuje 50/50 a uloží do prohlížeče (při další návštěvě stejná).
+</div>
+
+<div class="section">
+  <h2 class="section__title">Co chceme testovat</h2>
+  <p style="font-size:0.92rem;color:var(--text-muted);margin:0 0 1rem;">Stejná URL, stejný produkt, jiný messaging. Varianta A zůstává současný stav. Varianta B mluví rekvalifikačním tónem a je kratší.</p>
+
+  <div class="comparison">
+    <div class="col">
+      <p class="col__label col__label--a">A &mdash; současný stav</p>
+      <ul>
+        <li>Headline: <em>Ne škola. Výcvik.</em></li>
+        <li>Cílí na manuálně zručné</li>
+        <li>11 sekcí, detailní obsah</li>
+        <li>CTA: Rezervovat termín</li>
+      </ul>
+    </div>
+    <div class="col">
+      <p class="col__label col__label--b">B &mdash; rekvalifikace</p>
+      <ul>
+        <li>Headline: <em>Nová kariéra. Za 10 dní.</em></li>
+        <li>Cílí na změnu oboru</li>
+        <li>6 sloučených sekcí + galerie</li>
+        <li>CTA: Chci změnit obor</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2 class="section__title">Struktura varianty B</h2>
+  <ul class="changes">
+    <li><strong>Hero</strong> &mdash; rekvalifikační tón, eyebrow: Rekvalifikace s budoucností</li>
+    <li><strong>Co získáte + Pro koho</strong> &mdash; certifikát + proč elektro + požadavky (sloučeno)</li>
+    <li><strong>Jak to běží + Lektor + Galerie</strong> &mdash; průběh kurzu, lektor, 4 fotky z výuky (tmavý podklad)</li>
+    <li><strong>Termíny + Cena</strong> &mdash; kalendář běhů + ceník v jedné sekci</li>
+    <li><strong>Bez obav + Důkaz</strong> &mdash; obavy + statistiky + videoreference (tmavý podklad)</li>
+    <li><strong>Formulář</strong> &mdash; beze změny</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2 class="section__title">Jak to bude fungovat po nasazení</h2>
+
+  <div class="flow">
+    <div class="flow__step">
+      <span class="flow__num">1</span>
+      <p class="flow__text"><strong>Návštěvník přijde na stránku.</strong> Prohlížeč vylosuje variantu (50/50) a zapamatuje si ji. Při dalších návštěvách dostane vždy stejnou.</p>
+    </div>
+    <div class="flow__step">
+      <span class="flow__num">2</span>
+      <p class="flow__text"><strong>Event do GTM.</strong> Odešle se event <code>ab_test_exposure</code> s informací, kterou variantu návštěvník vidí.</p>
+    </div>
+    <div class="flow__step">
+      <span class="flow__num">3</span>
+      <p class="flow__text"><strong>GTM pošle data do GA4.</strong> V GA4 uvidíme, kolik lidí vidělo A vs. B.</p>
+    </div>
+    <div class="flow__step">
+      <span class="flow__num">4</span>
+      <p class="flow__text"><strong>Vyhodnocení.</strong> Porovnáme konverze formuláře (odeslání registrace) mezi variantami. Až bude jasný vítěz, test vypneme.</p>
+    </div>
+  </div>
+
+  <div style="overflow-x:auto">
+  <table class="stack-table">
+    <tr><th>Framework</th><td>Next.js 15, statický export, GitHub Pages</td></tr>
+    <tr><th>A/B logika</th><td>Client-side v prohlížeči (React hook)</td></tr>
+    <tr><th>Persistence</th><td>Uloženo v prohlížeči &mdash; každý návštěvník vidí vždy stejnou variantu</td></tr>
+    <tr><th>Preview</th><td>Query param <code>?ab_variant=</code> vynutí konkrétní variantu</td></tr>
+    <tr><th>Tracking</th><td>GTM kontejner &rarr; GA4</td></tr>
+    <tr><th>Event</th><td><code>ab_test_exposure</code> s identifikací testu a varianty</td></tr>
+  </table>
+  </div>
+</div>
+
+<div class="section">
+  <h2 class="section__title">Co potřebujeme před nasazením</h2>
+
+  <div class="todo">
+    <p class="todo__title">Ke schválení</p>
+    <div class="todo__item">
+      <span class="todo__check"></span>
+      <span><strong>Jakub:</strong> Projít variantu B na stagingu a potvrdit, že obsah a messaging mohou takto ven.</span>
+    </div>
+    <div class="todo__item">
+      <span class="todo__check"></span>
+      <span><strong>Petr:</strong> Ověřit, že GTM/GA4 měření je nastavené a zachytí event <code>ab_test_exposure</code> s parametry testu.</span>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>Po schválení</strong> stačí v kódu přepnout stránku na A/B wrapper a pushnout na produkci. Test pak poběží automaticky.
+  </div>
+</div>
+
+<div class="section">
+  <h2 class="section__title">Co se na webu změnilo (21. 8. 2026)</h2>
+  <p style="font-size:0.92rem;color:var(--text-muted);margin:0 0 0.5rem;">Tyto změny už běží na produkci (voltimo.cz):</p>
+  <ul class="changes">
+    <li><strong>SEO</strong> &mdash; kanonické URL, OpenGraph meta, title template, sitemap, interní linky, JSON-LD pro kurz a LocalBusiness</li>
+    <li><strong>Deploy fix</strong> &mdash; opraven build workflow (chybělo nastavení pro produkci, assety se nenačítaly)</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Připravil Petr Smolík &middot; ECC Digital &middot; 21. 8. 2026
+</div>
+</body>
+</html>
