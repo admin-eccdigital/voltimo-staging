@@ -22,6 +22,15 @@ function H3({ children }: { children?: React.ReactNode }) {
   return <h3 id={slugifyHeading(toText(children))}>{children}</h3>;
 }
 
+// Tabulka v obalu s vodorovným posunem — na mobilu se jinak buňky lámou.
+function Table({ children }: { children?: React.ReactNode }) {
+  return (
+    <div className="poradna-tablewrap">
+      <table>{children}</table>
+    </div>
+  );
+}
+
 function A({
   href = "",
   children,
@@ -112,6 +121,7 @@ export const mdxComponents = {
   h2: H2,
   h3: H3,
   a: A,
+  table: Table,
   Praxe,
   Pozor,
   Postup,
