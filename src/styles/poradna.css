@@ -478,6 +478,20 @@
   padding-top: 16px;
 }
 
+/* Široká obrazovka: text se zúží na čitelnou míru (~72 znaků na řádek),
+   ale vizuální bloky vybočí ze sloupce, ať stránka nevypadá hubeně. */
+@media (min-width: 860px) {
+  .poradna-article__wrap { max-width: 560px; }
+  .poradna-article__hero,
+  .poradna-figure,
+  .poradna-tablewrap,
+  .poradna-flow,
+  .poradna-cta {
+    margin-inline: -70px;
+  }
+  .poradna-figure figcaption { padding-inline: 70px; }
+}
+
 @media (max-width: 720px) {
   .poradna-featured__card { grid-template-columns: 1fr; }
   .poradna-featured__img { min-height: 200px; }
