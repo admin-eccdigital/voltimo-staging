@@ -102,8 +102,9 @@ export function LpDatesPriceB() {
             <div className="lp-pricehike">
               <Clock />
               <span>
-                Tato cena platí pro běhy do konce roku 2026.{" "}
-                <strong>Od 1. 1. 2027 se zvyšuje o 21 % (DPH).</strong>
+                <strong>Ceny jsou bez DPH.</strong> Od 1. 1. 2027 k nim přidáme
+                21 % DPH. Pro plátce DPH se nic nemění, ostatní zaplatí o 21 %
+                víc.
               </span>
             </div>
             <ul className="lp-price__incl">
