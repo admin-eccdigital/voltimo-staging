@@ -6,8 +6,9 @@ import { Play } from "lucide-react";
 
 // Video recenze chlazení (na výšku, jedna centrovaná karta).
 const V = {
-  heading: "Co mi dal kurz chlazení",
-  quote: "",
+  heading: "Přesně tenhle kurz mi chyběl",
+  quote:
+    "Montuju klimatizace a tepelná čerpadla a tahle příprava mi chyběla. Sedlo mi vybavení i to, že se učí prakticky na reálných zařízeních, ne jen teorie.",
   video: "/videos/videorecenze-chlazeni-1.mp4",
   poster: "/videos/videorecenze-chlazeni-1.jpg",
   len: "0:36",
