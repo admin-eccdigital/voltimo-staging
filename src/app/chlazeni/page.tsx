@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
-  ArrowRight, Award, BadgeCheck, Briefcase, Check, CheckCircle2, ClipboardCheck, Clock,
+  ArrowRight, Award, BadgeCheck, Briefcase, Check, CheckCircle2, ClipboardCheck,
   Flame, HardHat, Hammer, Info, Scissors, Signpost, Snowflake, Timer, Users, Wrench,
 } from "lucide-react";
 import { Button, Eyebrow, Heading, StatCircle, YellowLabel } from "@/components/brand";
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
 };
 
-const PRICE_FULL = "25 000 Kč";
+const PRICE_FULL = "26 620 Kč";
 
 const GALLERY = [
   { src: "chl-manifold-testo.jpg", cap: "Měření tlaků digitálním manifoldem" },
@@ -616,13 +616,6 @@ export default function ChlazeniPage() {
                     <li key={t}><span className="lp-check"><Check size={15} /></span>{t}</li>
                   ))}
                 </ul>
-              </div>
-              <div className="lp-pricehike">
-                <Clock />
-                <span>
-                  Tato cena platí pro běhy do konce roku 2026.{" "}
-                  <strong>Od 1. 1. 2027 se zvyšuje na 26 620 Kč.</strong>
-                </span>
               </div>
               <div className="chl-pricecard__foot">
                 <Button variant="cta" size="lg" icon={<ArrowRight />} href="#poptavka">
