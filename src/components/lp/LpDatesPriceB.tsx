@@ -88,7 +88,7 @@ export function LpDatesPriceB() {
                 {price.current.toLocaleString("cs-CZ")} Kč
               </span>
             </div>
-            <p className="lp-price__fine">Ceny jsou konečné, včetně DPH.</p>
+            <p className="lp-price__fine">Cena je konečná, včetně DPH. Pro plátce DPH 40 000 Kč bez DPH.</p>
             <ul className="lp-price__incl">
               {INCLUDES.map((item) => (
                 <li key={item}>
