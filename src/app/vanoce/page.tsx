@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
-  Snowflake, Gift, ArrowRight, Check, CalendarClock, Lock, TrendingUp, Sparkles,
+  Snowflake, Gift, ArrowRight, CalendarClock, Briefcase, TrendingUp, GraduationCap,
 } from "lucide-react";
 import { Section, Eyebrow, Heading, Button, YellowLabel, StatCircle } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
@@ -9,14 +10,13 @@ import { LP_DATA } from "@/lib/lp-data";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
-  title: "Dej si pod stromeček posun. Kurzy Voltimo 2027",
+  title: "Nový rok, nová kvalifikace. Kurzy Voltimo 2027",
   description:
-    "Elektrikář i chlazení jsou letos vyprodané. Zajistěte si místo na jarní běhy 2027 nebo darujte kurz pod stromeček. Rezervace nezávazná, cena se nezvyšuje.",
+    "Elektrikář i chlazení jsou letos vyprodané. Zajistěte si místo na jarní běhy 2027, nebo darujte kurz pod stromeček. 300+ spokojených absolventů.",
 };
 
-const ELEKTRO = LP_DATA.price; // 48 400 Kč s DPH / 40 000 bez DPH
+const ELEKTRO = LP_DATA.price; // 48 400 Kč s DPH
 const ELEKTRO_2027 = LP_DATA.dates.filter((d) => d.title.includes("2027"));
-
 const CHL_2027 = [
   { title: "Lednový běh 2027", range: "Zkoušky 13. – 14. 1. 2027" },
   { title: "Únorový běh 2027", range: "Zkoušky 10. – 11. 2. 2027" },
@@ -24,20 +24,34 @@ const CHL_2027 = [
 
 const WHY = [
   {
-    ic: Sparkles,
-    t: "Letos už se nedostanete",
-    d: "Elektrikář i chlazení jsou do konce roku vyprodané. Jarní běhy 2027 se plní. Kdo chce na jaro, bere místo teď.",
+    ic: TrendingUp,
+    t: "Řemeslo, co má budoucnost",
+    d: "Elektrikářů i chlaďařů je málo. O práci nouzi mít nebudete a jen tak vás nenahradí.",
   },
   {
-    ic: Lock,
-    t: "Cena se nezvyšuje",
-    d: "Co vidíte dnes, to platí i v roce 2027. Na nic nečekáte, o nic nepřijdete.",
+    ic: GraduationCap,
+    t: "Papír za pár dní, ne roky ve škole",
+    d: "Úplnou kvalifikaci získáte prakticky, z praxe ke zkoušce. Bez návratu do lavic.",
   },
   {
-    ic: Check,
-    t: "Rezervace nic nestojí",
-    d: "Místo si zamluvíte nezávazně, teď neplatíte ani korunu. Kurz se hradí až fakturou před začátkem.",
+    ic: Briefcase,
+    t: "Cesta na vlastní živnost",
+    d: "S kvalifikací si můžete založit živnost a fakturovat na sebe.",
   },
+];
+
+const REVIEWS = [
+  { n: "Jakub H.", r: "Absolvent Chlazení", q: "Po letech jsem si chtěl konečně udělat papír. Bylo to jednodušší, než jsem čekal." },
+  { n: "Absolvent kurzu", r: "Elektrikář", q: "Přemýšlel jsem o změně oboru, i kvůli AI. Elektriku nahradit nemůže. Znalosti jsem si konečně ucelil v kuse." },
+  { n: "Milan K.", r: "Servis tepelných čerpadel", q: "Nejvíc mě překvapilo, že to nebyla nudná teorie. Člověk ví, proč to dělá." },
+  { n: "Lukáš H.", r: "OSVČ v chlazení", q: "Šel jsem hlavně kvůli papírům, ale dal mi to i jistotu v tom, co dělám." },
+];
+
+const ROZCESTNIK = [
+  { t: "Elektrikář za 10 dní", d: "Úplná kvalifikace, 5 profesních kvalifikací.", href: "/elektrikar-za-10-dni/" },
+  { t: "Chlazení za 4 dny", d: "Dvě osvědčení NSK, malá i velká zařízení.", href: "/chlazeni/" },
+  { t: "Rekvalifikace přes ÚP", d: "Jak si nechat kurz zaplatit úřadem práce.", href: "/rekvalifikace/" },
+  { t: "Poradna", d: "Jak se stát elektrikářem nebo chlaďařem, krok za krokem.", href: "/poradna/" },
 ];
 
 export default function VanocePage() {
@@ -54,33 +68,33 @@ export default function VanocePage() {
             <YellowLabel lines={["Letos plno.", "Posuň se v 2027."]} size="md" />
           </h1>
           <p className="vn-hero__lead">
-            Elektrikář i chlazení jsou do konce roku vyprodané. Nejlepší dárek ale
-            nevydrží jen do Silvestra. Zajistěte si (nebo někomu blízkému) místo na
-            jarní běh 2027 a začněte nový rok posunem, který vydrží.
+            Elektrikář i chlazení máme do konce roku plné. Na jarní běhy 2027 ale
+            místo ještě je. Začněte nový rok kvalifikací, kterou uznává úřad i
+            zaměstnavatel, a papírem na to, co umíte rukama.
           </p>
           <div className="vn-hero__cta">
             <Button variant="cta" size="lg" icon={<ArrowRight />} href="#kurzy">
-              Zamluvit místo na 2027
+              Vybrat kurz na 2027
             </Button>
-            <Button variant="outline" size="lg" className="chl-btn-ondark" href={`${basePath}/kontakt/`}>
-              Darovat kurz pod stromeček
+            <Button variant="outline" size="lg" className="chl-btn-ondark" href="#darek">
+              Darovat kurz
             </Button>
           </div>
           <div className="vn-hero__stats">
             <StatCircle value="2026" label="vyprodáno" variant="yellow" />
-            <StatCircle value="2027" label="běhy se plní" variant="blue" />
-            <StatCircle value="0 Kč" label="při rezervaci" variant="outline" />
+            <StatCircle value={LP_DATA.stats.graduates} label="absolventů" variant="blue" />
+            <StatCircle value={LP_DATA.stats.successRate} label="u zkoušky" variant="outline" />
           </div>
         </div>
       </section>
 
-      {/* PROČ TEĎ */}
+      {/* PROČ DO TOHO JÍT */}
       <Section tone="light">
         <FadeIn>
           <div className="lp-wrap">
             <div className="lp-head lp-head--center">
-              <Eyebrow>Proč to řešit teď</Eyebrow>
-              <Heading level={2}>Vyprodáno není konec. Je to důvod být rychlý.</Heading>
+              <Eyebrow>Proč do toho jít</Eyebrow>
+              <Heading level={2}>Nový rok je dobrý čas začít dělat rukama pořádně.</Heading>
             </div>
             <div className="vn-why">
               {WHY.map((w) => (
@@ -95,46 +109,24 @@ export default function VanocePage() {
         </FadeIn>
       </Section>
 
-      {/* DÁREK */}
-      <Section tone="subtle">
-        <FadeIn>
-          <div className="lp-wrap">
-            <div className="vn-gift">
-              <div className="vn-gift__body">
-                <span className="vn-gift__tag"><Gift size={16} /> Dárkový poukaz</span>
-                <Heading level={2}>Dej pod stromeček posun, ne další krám.</Heading>
-                <p>
-                  Poukaz na kurz Elektrikář nebo Chlazení. Rozbalí se u stromečku,
-                  na kurz jde v novém roce. Dárek, který mění, čím člověk je, ne jen
-                  co má v šuplíku.
-                </p>
-                <Button variant="cta" icon={<ArrowRight />} href={`${basePath}/kontakt/`}>
-                  Napsat si o poukaz
-                </Button>
-              </div>
-              <div className="vn-gift__art" aria-hidden="true">
-                <Gift size={88} />
-              </div>
-            </div>
-          </div>
-        </FadeIn>
-      </Section>
-
       {/* KURZY 2027 */}
-      <Section tone="light" id="kurzy">
+      <Section tone="subtle" id="kurzy">
         <FadeIn>
           <div className="lp-wrap">
             <div className="lp-head lp-head--center">
               <Eyebrow>Termíny 2027</Eyebrow>
               <Heading level={2}>Vyberte si běh a zamluvte místo.</Heading>
               <p className="lp-head__sub">
-                Leden, únor a další jarní termíny. Rezervace nezávazná.
+                Letos je plno. Tohle jsou nejbližší volné běhy na jaře 2027.
               </p>
             </div>
 
             <div className="vn-courses">
               {/* ELEKTRO */}
               <div className="vn-course">
+                <div className="vn-course__img">
+                  <Image src={`${basePath}/photos/poradna/vyuka-skupina-panel.jpg`} alt="Výcvik elektrikářů ve Voltimu" fill sizes="(max-width: 860px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+                </div>
                 <span className="vn-course__kicker">Úplná kvalifikace · 5 PK</span>
                 <h3 className="vn-course__title">Elektrikář za 10 dní</h3>
                 <p className="vn-course__price">
@@ -156,6 +148,9 @@ export default function VanocePage() {
 
               {/* CHLAZENÍ */}
               <div className="vn-course">
+                <div className="vn-course__img">
+                  <Image src={`${basePath}/photos/chl-manifold-testo.jpg`} alt="Výcvik chlaďařů ve Voltimu" fill sizes="(max-width: 860px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+                </div>
                 <span className="vn-course__kicker">23-054 + 23-055</span>
                 <h3 className="vn-course__title">Chlazení za 4 dny</h3>
                 <p className="vn-course__price">
@@ -175,10 +170,75 @@ export default function VanocePage() {
                 </Button>
               </div>
             </div>
+          </div>
+        </FadeIn>
+      </Section>
 
-            <p className="vn-note">
-              <TrendingUp size={15} /> Kdo se ozve do 24. 12., vybere si termín přednostně.
-            </p>
+      {/* ABSOLVENTI */}
+      <Section tone="light">
+        <FadeIn>
+          <div className="lp-wrap">
+            <div className="lp-head lp-head--center">
+              <Eyebrow>Co říkají absolventi</Eyebrow>
+              <Heading level={2}>Prošli tím před vámi. A nelitují.</Heading>
+            </div>
+            <div className="vn-reviews">
+              {REVIEWS.map((rev) => (
+                <figure className="vn-review" key={rev.q}>
+                  <blockquote>„{rev.q}"</blockquote>
+                  <figcaption>
+                    <strong>{rev.n}</strong>
+                    <span>{rev.r}</span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* DÁREK */}
+      <Section tone="subtle" id="darek">
+        <FadeIn>
+          <div className="lp-wrap">
+            <div className="vn-gift">
+              <div className="vn-gift__body">
+                <span className="vn-gift__tag"><Gift size={16} /> Dárkový poukaz</span>
+                <Heading level={2}>Darujte kurz pod stromeček.</Heading>
+                <p>
+                  Máte doma někoho, kdo by chtěl dělat rukama a mít konečně papír?
+                  Darujte mu kurz elektrikáře nebo chlazení. Poukaz rozbalí u
+                  stromečku, na kurz nastoupí na jaře.
+                </p>
+                <Button variant="cta" icon={<ArrowRight />} href={`${basePath}/kontakt/`}>
+                  Chci dárkový poukaz
+                </Button>
+              </div>
+              <div className="vn-gift__art" aria-hidden="true">
+                <Gift size={88} />
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* ROZCESTNÍK */}
+      <Section tone="light">
+        <FadeIn>
+          <div className="lp-wrap">
+            <div className="lp-head lp-head--center">
+              <Eyebrow>Kam dál</Eyebrow>
+              <Heading level={2}>Mrkněte na konkrétní kurzy.</Heading>
+            </div>
+            <div className="vn-nav">
+              {ROZCESTNIK.map((r) => (
+                <a className="vn-nav__card" key={r.href} href={`${basePath}${r.href}`}>
+                  <strong>{r.t}</strong>
+                  <p>{r.d}</p>
+                  <span className="vn-nav__go">Otevřít <ArrowRight size={16} /></span>
+                </a>
+              ))}
+            </div>
           </div>
         </FadeIn>
       </Section>
@@ -189,7 +249,7 @@ export default function VanocePage() {
           <Heading level={2}>Nový rok, nová kvalifikace.</Heading>
           <p>Letos je plno. Jaro 2027 je na dosah. Zamluvte si místo, než ho vezme někdo jiný.</p>
           <Button variant="cta" size="lg" icon={<ArrowRight />} href="#kurzy">
-            Zamluvit místo na 2027
+            Vybrat kurz na 2027
           </Button>
         </div>
       </Section>

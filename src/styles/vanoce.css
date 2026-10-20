@@ -103,14 +103,46 @@
 }
 .vn-note svg { color: var(--voltimo-primary); }
 
+/* foto v kartě kurzu */
+.vn-course { overflow: hidden; }
+.vn-course__img { position: relative; width: calc(100% + 56px); height: 190px; margin: -28px -28px 22px; }
+
+/* ABSOLVENTI */
+.vn-reviews { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; }
+.vn-review { margin: 0; background: var(--surface-card); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 24px; }
+.vn-review blockquote { margin: 0; font-size: 16px; line-height: 1.6; color: var(--text-body); }
+.vn-review figcaption { margin-top: 14px; display: flex; flex-direction: column; }
+.vn-review figcaption strong { color: var(--text-heading); }
+.vn-review figcaption span { font-size: 13px; color: var(--text-muted); }
+
+/* ROZCESTNÍK */
+.vn-nav { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; }
+.vn-nav__card {
+  display: flex; flex-direction: column; gap: 6px; text-decoration: none;
+  background: var(--surface-card); border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg); padding: 22px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.vn-nav__card:hover { border-color: var(--voltimo-primary); transform: translateY(-2px); }
+.vn-nav__card strong { color: var(--text-heading); font-size: 17px; }
+.vn-nav__card p { margin: 0; flex: 1; color: var(--text-body); font-size: 14px; line-height: 1.5; }
+.vn-nav__go { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; color: var(--voltimo-primary); font-weight: var(--fw-semibold); font-size: 14px; }
+
 /* ZÁVĚR */
 .vn-final { text-align: center; max-width: 640px; }
 .vn-final h2 { color: #fff; }
 .vn-final p { color: #E7ECF6; margin: 14px 0 26px; line-height: 1.6; }
 
+@media (max-width: 1040px) {
+  .vn-nav { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 860px) {
   .vn-why { grid-template-columns: 1fr; }
   .vn-courses { grid-template-columns: 1fr; }
+  .vn-reviews { grid-template-columns: 1fr; }
   .vn-gift { grid-template-columns: 1fr; text-align: left; }
   .vn-gift__art { display: none; }
+}
+@media (max-width: 520px) {
+  .vn-nav { grid-template-columns: 1fr; }
 }
