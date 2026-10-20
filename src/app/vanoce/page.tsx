@@ -1,42 +1,43 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
-  Snowflake, Gift, ArrowRight, CalendarClock, Briefcase, TrendingUp, GraduationCap,
+  Snowflake, Gift, ArrowRight, CalendarClock, GraduationCap, ClipboardCheck, Wrench,
 } from "lucide-react";
 import { Section, Eyebrow, Heading, Button, YellowLabel, StatCircle } from "@/components/brand";
 import { FadeIn } from "@/components/lp/FadeIn";
+import { VnVideos } from "@/components/lp/VnVideos";
 import { LP_DATA } from "@/lib/lp-data";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const metadata: Metadata = {
-  title: "Nový rok, nová kvalifikace. Kurzy Voltimo 2027",
+  title: "Nedodělal jsi školu? Řemeslo tím nekončí. Kurzy Voltimo 2027",
   description:
-    "Elektrikář i chlazení jsou letos vyprodané. Zajistěte si místo na jarní běhy 2027, nebo darujte kurz pod stromeček. 300+ spokojených absolventů.",
+    "Nedodělali jste učňák nebo střední? Elektrikáře i chlaďaře uděláte přes zkoušku, ne přes diplom. Letos plno, zajistěte si místo na jaro 2027, nebo darujte kurz pod stromeček.",
 };
 
-const ELEKTRO = LP_DATA.price; // 48 400 Kč s DPH
+const ELEKTRO = LP_DATA.price;
 const ELEKTRO_2027 = LP_DATA.dates.filter((d) => d.title.includes("2027"));
 const CHL_2027 = [
   { title: "Lednový běh 2027", range: "Zkoušky 13. – 14. 1. 2027" },
   { title: "Únorový běh 2027", range: "Zkoušky 10. – 11. 2. 2027" },
 ];
 
-const WHY = [
-  {
-    ic: TrendingUp,
-    t: "Řemeslo, co má budoucnost",
-    d: "Elektrikářů i chlaďařů je málo. O práci nouzi mít nebudete a jen tak vás nenahradí.",
-  },
+const PATH = [
   {
     ic: GraduationCap,
-    t: "Nedodělaná škola? Nevadí.",
-    d: "Ke kvalifikaci stačí základka, 18 let a chuť. Papír doženete zkouškou, bez návratu do lavic.",
+    t: "Stačí ti základka",
+    d: "Ke zkoušce potřebuješ základní vzdělání, 18 let a zdraví. Výuční list ani maturitu ne.",
   },
   {
-    ic: Briefcase,
-    t: "Cesta na vlastní živnost",
-    d: "S kvalifikací si můžete založit živnost a fakturovat na sebe.",
+    ic: ClipboardCheck,
+    t: "Papír doženeš zkouškou",
+    d: "Řemeslo dnes dokládá zkouška, ne diplom. Příprava je krátká a praktická, bez návratu do lavic.",
+  },
+  {
+    ic: Wrench,
+    t: "Nemáš praxi? Nevadí.",
+    d: "Připravíme tě. Bez praxe pak chvíli děláš pod dohledem zkušenějšího. Papír je start, mistra z tebe udělá praxe.",
   },
 ];
 
@@ -59,19 +60,25 @@ export default function VanocePage() {
     <>
       {/* HERO */}
       <section className="vn-hero">
+        <div
+          className="vn-hero__media"
+          style={{
+            backgroundImage: `linear-gradient(165deg, rgba(10,23,51,0.80) 0%, rgba(10,19,40,0.9) 70%), url('${basePath}/photos/poradna/vyuka-skupina-panel.jpg')`,
+          }}
+          aria-hidden="true"
+        />
         <div className="vn-hero__snow" aria-hidden="true" />
         <div className="lp-wrap vn-hero__inner">
           <span className="vn-eyebrow">
             <Snowflake size={16} /> Vánoce ve Voltimu
           </span>
           <h1 className="vn-hero__title">
-            <YellowLabel lines={["Letos plno.", "Posuň se v 2027."]} size="md" />
+            <YellowLabel lines={["Nedodělal jsi školu?", "Řemeslo tím nekončí."]} size="md" />
           </h1>
           <p className="vn-hero__lead">
-            Elektrikář i chlazení máme do konce roku plné. Na jarní běhy 2027 ale
-            místo ještě je. Začněte nový rok kvalifikací, kterou uznává úřad i
-            zaměstnavatel, a papírem na to, co umíte rukama. Školu dodělanou mít
-            nemusíte.
+            Elektrikáře i chlaďaře dnes uděláš přes zkoušku, ne přes diplom. Stačí
+            základka, 18 let a chuť makat rukama. Řemeslo, které tě uživí a jde dělat
+            i na sebe. Letos máme plno, na jarní běhy 2027 ale místo ještě je.
           </p>
           <div className="vn-hero__cta">
             <Button variant="cta" size="lg" icon={<ArrowRight />} href="#kurzy">
@@ -89,16 +96,20 @@ export default function VanocePage() {
         </div>
       </section>
 
-      {/* PROČ DO TOHO JÍT */}
+      {/* NEDODĚLAL JSI ŠKOLU */}
       <Section tone="light">
         <FadeIn>
           <div className="lp-wrap">
             <div className="lp-head lp-head--center">
-              <Eyebrow>Proč do toho jít</Eyebrow>
-              <Heading level={2}>Nový rok je dobrý čas začít dělat rukama pořádně.</Heading>
+              <Eyebrow>Nedodělal jsi školu?</Eyebrow>
+              <Heading level={2}>Není to konec. Je to nový začátek.</Heading>
+              <p className="lp-head__sub">
+                Spousta lidí si myslí, že bez výučního listu nemají v řemesle šanci.
+                Dávno to neplatí. Takhle se k papíru dostaneš.
+              </p>
             </div>
             <div className="vn-why">
-              {WHY.map((w) => (
+              {PATH.map((w) => (
                 <div className="vn-why__card" key={w.t}>
                   <span className="vn-why__ic"><w.ic size={20} /></span>
                   <strong>{w.t}</strong>
@@ -106,6 +117,12 @@ export default function VanocePage() {
                 </div>
               ))}
             </div>
+            <p className="vn-note">
+              Celé to rozebíráme v článku{" "}
+              <a href={`${basePath}/poradna/nedodelal-jsem-skolu-muzu-delat-elektrikare/`}>
+                Nedodělal jsem školu. Můžu dělat elektrikáře nebo chlaďaře?
+              </a>
+            </p>
           </div>
         </FadeIn>
       </Section>
@@ -175,8 +192,21 @@ export default function VanocePage() {
         </FadeIn>
       </Section>
 
-      {/* ABSOLVENTI */}
+      {/* VIDEORECENZE */}
       <Section tone="light">
+        <FadeIn>
+          <div className="lp-wrap">
+            <div className="lp-head lp-head--center">
+              <Eyebrow>Videorecenze</Eyebrow>
+              <Heading level={2}>Podívejte se, kdo tím prošel.</Heading>
+            </div>
+            <VnVideos />
+          </div>
+        </FadeIn>
+      </Section>
+
+      {/* ABSOLVENTI */}
+      <Section tone="subtle">
         <FadeIn>
           <div className="lp-wrap">
             <div className="lp-head lp-head--center">
@@ -199,7 +229,7 @@ export default function VanocePage() {
       </Section>
 
       {/* DÁREK */}
-      <Section tone="subtle" id="darek">
+      <Section tone="light" id="darek">
         <FadeIn>
           <div className="lp-wrap">
             <div className="vn-gift">
@@ -225,7 +255,7 @@ export default function VanocePage() {
       </Section>
 
       {/* ROZCESTNÍK */}
-      <Section tone="light">
+      <Section tone="subtle">
         <FadeIn>
           <div className="lp-wrap">
             <div className="lp-head lp-head--center">
