@@ -30,8 +30,8 @@ const WHY = [
   },
   {
     ic: GraduationCap,
-    t: "Papír za pár dní, ne roky ve škole",
-    d: "Úplnou kvalifikaci získáte prakticky, z praxe ke zkoušce. Bez návratu do lavic.",
+    t: "Nedodělaná škola? Nevadí.",
+    d: "Ke kvalifikaci stačí základka, 18 let a chuť. Papír doženete zkouškou, bez návratu do lavic.",
   },
   {
     ic: Briefcase,
@@ -70,7 +70,8 @@ export default function VanocePage() {
           <p className="vn-hero__lead">
             Elektrikář i chlazení máme do konce roku plné. Na jarní běhy 2027 ale
             místo ještě je. Začněte nový rok kvalifikací, kterou uznává úřad i
-            zaměstnavatel, a papírem na to, co umíte rukama.
+            zaměstnavatel, a papírem na to, co umíte rukama. Školu dodělanou mít
+            nemusíte.
           </p>
           <div className="vn-hero__cta">
             <Button variant="cta" size="lg" icon={<ArrowRight />} href="#kurzy">
@@ -204,11 +205,12 @@ export default function VanocePage() {
             <div className="vn-gift">
               <div className="vn-gift__body">
                 <span className="vn-gift__tag"><Gift size={16} /> Dárkový poukaz</span>
-                <Heading level={2}>Darujte kurz pod stromeček.</Heading>
+                <Heading level={2}>Darujte dětem řemeslo do života.</Heading>
                 <p>
-                  Máte doma někoho, kdo by chtěl dělat rukama a mít konečně papír?
-                  Darujte mu kurz elektrikáře nebo chlazení. Poukaz rozbalí u
-                  stromečku, na kurz nastoupí na jaře.
+                  Dítě nedodělalo školu a neví, kam dál? Nebo chce konečně dělat
+                  rukama a mít papír? Darujte mu kurz elektrikáře nebo chlazení.
+                  Poukaz rozbalí u stromečku, na kurz nastoupí na jaře a má v ruce
+                  řemeslo, které ho uživí.
                 </p>
                 <Button variant="cta" icon={<ArrowRight />} href={`${basePath}/kontakt/`}>
                   Chci dárkový poukaz
