@@ -85,8 +85,9 @@ export function getArticle(slug: string): PoradnaArticle {
     description: meta.description ?? "",
     kicker: meta.kicker ?? "",
     category: meta.category ?? "",
-    // Obor odvozujeme ze slugu: chlazení slugy obsahují „chlad".
-    pillar: /chlad/.test(slug) ? "chlazeni" : "elektro",
+    // Obor odvozujeme ze slugu: chlazení slugy obsahují „chlad" (chladař) nebo
+    // „chlaz" (chlazení). Elektro slugy ani jedno.
+    pillar: /chla[dz]/.test(slug) ? "chlazeni" : "elektro",
     answer: meta.answer ?? "",
     readingMinutes: meta.readingMinutes ?? Math.max(1, Math.round(rt.minutes)),
     updated: meta.updated ?? "2026",
