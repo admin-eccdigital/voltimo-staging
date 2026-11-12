@@ -99,8 +99,8 @@ export default function FplynyPodminkyPage() {
                   dostupný na webových stránkách subjektu nebo na vyžádání.
                 </li>
                 <li>
-                  Po přijetí žádosti a platby vám bude zaslán termín a místo
-                  konání zkoušky, nejpozději 14 dnů před jejím konáním.
+                  Po přijetí žádosti a platby vám potvrdíme termín a místo
+                  konání zkoušky.
                 </li>
                 <li>
                   K samotné zkoušce si přineste platný doklad totožnosti
@@ -156,10 +156,14 @@ export default function FplynyPodminkyPage() {
                   vybavení a zároveň komisi popisujete, co děláte a proč.
                 </li>
                 <li>
+                  Délka: nejméně 30 minut (§ 5 odst. 5 vyhlášky č. 243/2023 Sb.).
+                </li>
+                <li>
                   Komise: praktickou zkoušku hodnotí nejméně 3 členové zkušební
-                  komise jmenovaní Ministerstvem životního prostředí. Před
-                  zahájením zkoušky si komise volí svého předsedu, který řídí
-                  průběh a oznamuje výsledek.
+                  komise ze schváleného seznamu, který je součástí povolení
+                  subjektu (§ 5 odst. 3 vyhlášky č. 243/2023 Sb.). Před zahájením
+                  zkoušky si komise volí svého předsedu, který řídí průběh a
+                  oznamuje výsledek.
                 </li>
                 <li>
                   Dotazy komise: během řešení a po něm vám komise může klást
@@ -182,10 +186,9 @@ export default function FplynyPodminkyPage() {
               <h2>5. Co když zkoušku nesložím napoprvé</h2>
               <p>
                 Pokud teoretickou nebo praktickou zkoušku nesložíte, můžete ji
-                opakovat. Pro opakovanou zkoušku platí stejné minimální
-                požadavky (§ 4 odst. 6 vyhlášky č. 243/2023 Sb.). Termín
-                opakované zkoušky nabízíme uchazečům nejdříve po 14 dnech od
-                neúspěšné zkoušky a nejpozději do 12 měsíců.
+                opakovat; platí pro ni stejné minimální požadavky (§ 4 odst. 6 a
+                § 5 odst. 6 vyhlášky č. 243/2023 Sb.). Opakovanou praktickou
+                zkoušku lze konat nejpozději do 6 měsíců od neúspěšného složení.
               </p>
             </div>
 
@@ -197,6 +200,7 @@ export default function FplynyPodminkyPage() {
               </p>
               <ul>
                 <li>typu A1,</li>
+                <li>na dobu neurčitou,</li>
                 <li>v listinné nebo elektronické podobě,</li>
                 <li>
                   obsahuje vaše identifikační údaje, jedinečné číslo certifikátu,
@@ -226,7 +230,9 @@ export default function FplynyPodminkyPage() {
                 Nařízení Evropského parlamentu a Rady (EU) 2024/573 o fluorovaných
                 skleníkových plynech absolvovat nejméně jednou za 7 let
                 aktualizační školení k obnovení znalostí, případně opětovně
-                složit certifikační zkoušku. Účelem recertifikace je zajistit,
+                složit certifikační zkoušku. Osoby certifikované podle dřívějších
+                předpisů musí tuto povinnost poprvé splnit nejpozději do
+                12. března 2029. Účelem recertifikace je zajistit,
                 aby držitel certifikátu byl seznámen s aktuálním stavem
                 legislativy, novými chladivy (zejména přírodními a hořlavými
                 alternativami) a aktuálními bezpečnostními a technickými normami.
