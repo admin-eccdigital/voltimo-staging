@@ -188,12 +188,10 @@ export default function FplynyPodminkyPage() {
               <h2>5. Co když zkoušku nesložím napoprvé</h2>
               <p>
                 Pokud teoretickou nebo praktickou zkoušku nesložíte, můžete ji
-                opakovat; platí pro ni stejné minimální požadavky (§ 4 odst. 6 a
-                § 5 odst. 6 vyhlášky č. 243/2023 Sb.). Termín opakované zkoušky
-                vám nabídneme nejdříve po uplynutí 14 dnů od neúspěšné zkoušky.
-                Opakovanou praktickou zkoušku je přitom nutné vykonat nejpozději
-                do 6 měsíců od neúspěšného složení (§ 5 odst. 6 vyhlášky
-                č. 243/2023 Sb.).
+                opakovat; pro opakovanou zkoušku platí stejné minimální
+                požadavky (§ 4 odst. 6 vyhlášky č. 243/2023 Sb.). Termín
+                opakované zkoušky vám nabídneme nejdříve po uplynutí 14 dnů a
+                nejpozději do 12 měsíců od neúspěšné zkoušky.
               </p>
             </div>
 
@@ -242,9 +240,7 @@ export default function FplynyPodminkyPage() {
                 Nařízení Evropského parlamentu a Rady (EU) 2024/573 o fluorovaných
                 skleníkových plynech absolvovat nejméně jednou za 7 let
                 aktualizační školení k obnovení znalostí, případně opětovně
-                složit certifikační zkoušku. Osoby certifikované podle dřívějších
-                předpisů musí tuto povinnost poprvé splnit nejpozději do
-                12. března 2029. Účelem recertifikace je zajistit,
+                složit certifikační zkoušku. Účelem recertifikace je zajistit,
                 aby držitel certifikátu byl seznámen s aktuálním stavem
                 legislativy, novými chladivy (zejména přírodními a hořlavými
                 alternativami) a aktuálními bezpečnostními a technickými normami.
