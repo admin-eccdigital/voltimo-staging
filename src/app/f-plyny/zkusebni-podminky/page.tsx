@@ -99,8 +99,8 @@ export default function FplynyPodminkyPage() {
                   dostupný na webových stránkách subjektu nebo na vyžádání.
                 </li>
                 <li>
-                  Po přijetí žádosti a platby vám potvrdíme termín a místo
-                  konání zkoušky.
+                  Po přijetí žádosti a platby vám zašleme termín a místo konání
+                  zkoušky, nejpozději 14 dnů před jejím konáním.
                 </li>
                 <li>
                   K samotné zkoušce si přineste platný doklad totožnosti
@@ -160,10 +160,12 @@ export default function FplynyPodminkyPage() {
                 </li>
                 <li>
                   Komise: praktickou zkoušku hodnotí nejméně 3 členové zkušební
-                  komise ze schváleného seznamu, který je součástí povolení
-                  subjektu (§ 5 odst. 3 vyhlášky č. 243/2023 Sb.). Před zahájením
-                  zkoušky si komise volí svého předsedu, který řídí průběh a
-                  oznamuje výsledek.
+                  komise, které na návrh subjektu jmenuje Ministerstvo životního
+                  prostředí (§ 8a odst. 2 zákona č. 73/2012 Sb.) a kteří jsou
+                  uvedeni na schváleném seznamu tvořícím součást povolení
+                  subjektu. Před zahájením zkoušky si komise ze svých řad volí
+                  předsedu, který řídí průběh a oznamuje výsledek (§ 5 odst. 3
+                  vyhlášky č. 243/2023 Sb.).
                 </li>
                 <li>
                   Dotazy komise: během řešení a po něm vám komise může klást
@@ -187,8 +189,11 @@ export default function FplynyPodminkyPage() {
               <p>
                 Pokud teoretickou nebo praktickou zkoušku nesložíte, můžete ji
                 opakovat; platí pro ni stejné minimální požadavky (§ 4 odst. 6 a
-                § 5 odst. 6 vyhlášky č. 243/2023 Sb.). Opakovanou praktickou
-                zkoušku lze konat nejpozději do 6 měsíců od neúspěšného složení.
+                § 5 odst. 6 vyhlášky č. 243/2023 Sb.). Termín opakované zkoušky
+                vám nabídneme nejdříve po uplynutí 14 dnů od neúspěšné zkoušky.
+                Opakovanou praktickou zkoušku je přitom nutné vykonat nejpozději
+                do 6 měsíců od neúspěšného složení (§ 5 odst. 6 vyhlášky
+                č. 243/2023 Sb.).
               </p>
             </div>
 
@@ -208,6 +213,13 @@ export default function FplynyPodminkyPage() {
                   oprávněné osoby (§ 11 odst. 2 vyhlášky č. 243/2023 Sb.).
                 </li>
               </ul>
+              <p>
+                Certifikát vám vystavíme nejpozději do 30 dnů ode dne úspěšného
+                složení praktické zkoušky. Ve stejné lhůtě předáme údaje o
+                vydaném certifikátu Ministerstvu životního prostředí a jeho kopii
+                České inspekci životního prostředí (§ 8a odst. 1 zákona
+                č. 73/2012 Sb.).
+              </p>
               <p>
                 Vydaný certifikát je uznáván ve všech členských státech Evropské
                 unie podle čl. 9 Prováděcího nařízení (EU) 2024/2215.
