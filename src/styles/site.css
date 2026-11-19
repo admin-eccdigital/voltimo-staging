@@ -40,6 +40,19 @@
 }
 .site-header__phone svg { width: 18px; height: 18px; color: var(--voltimo-sky); }
 
+/* ---- Online testy (sekundární "login" odkaz, ne žlutá CTA) ---- */
+.site-header__testy {
+  display: inline-flex; align-items: center; gap: 7px; flex: none;
+  padding: 8px 15px; border-radius: var(--radius-full);
+  border: 1px solid var(--border-default);
+  font-size: 14px; font-weight: var(--fw-semibold); line-height: 1;
+  color: var(--voltimo-primary); text-decoration: none; white-space: nowrap;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+.site-header__testy:hover { background: var(--voltimo-primary-soft); border-color: var(--voltimo-sky); }
+.site-header__testy svg { width: 16px; height: 16px; color: var(--voltimo-sky); }
+.site-header__testy--active { border-color: var(--voltimo-sky); background: var(--voltimo-sky-soft); }
+
 /* ---- Hamburger ---- */
 .site-header__hamburger {
   display: none; background: none; border: none; cursor: pointer; padding: 8px;
@@ -82,9 +95,15 @@
 @media (max-width: 920px) {
   .site-header__nav { display: none; }
   .site-header__phone { display: none; }
+  .site-header__testy { display: none; }
   .site-header__cta { display: none; }
   .site-header__hamburger { display: flex; }
 }
+
+/* ---- Mobilní sekce "Pro studenty" ---- */
+.site-header__mobile-students { display: flex; flex-direction: column; gap: 2px; }
+.site-header__mobile-link--testy { display: inline-flex; align-items: center; gap: 10px; }
+.site-header__mobile-link--testy svg { width: 20px; height: 20px; color: var(--voltimo-sky); }
 
 /* ============================ SITE FOOTER ============================ */
 .site-footer__band {
