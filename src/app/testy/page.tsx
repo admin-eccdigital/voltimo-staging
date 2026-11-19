@@ -6,7 +6,7 @@ import { Button, Eyebrow, Heading } from "@/components/brand";
 const TESTY_URL = "https://testy.voltimo.cz/";
 
 export const metadata: Metadata = {
-  title: "Online testy — procvičování pro kurzanty",
+  title: "Online testy pro kurzanty",
   description:
     "Online procvičování testových otázek Voltimo. Jako v autoškole, neomezeně. Přístup pro přihlášené kurzanty.",
   robots: { index: false, follow: false },
@@ -19,11 +19,11 @@ const OKRUHY: readonly Okruh[] = [
     stav: "live",
     nazev: "F-plyny (A1)",
     popis:
-      "Příprava na certifikační zkoušku. Otázky z oficiálních příloh — teoretické i praktické úlohy, u každé vysvětlení.",
+      "Příprava na certifikační zkoušku. Otázky z oficiálních příloh, teoretické i praktické úlohy, u každé vysvětlení.",
   },
   {
     stav: "soon",
-    nazev: "Elektro — § 6 a § 7",
+    nazev: "Elektro (§ 6 a § 7)",
     popis:
       "Odborná způsobilost dle NV 194/2022 Sb. Zařadíme hned po F-plynech.",
   },
@@ -36,7 +36,7 @@ const OKRUHY: readonly Okruh[] = [
 
 const JAK: readonly { icon: React.ReactNode; text: string }[] = [
   { icon: <RefreshCw />, text: "Neomezené pokusy a okamžitá zpětná vazba u každé otázky." },
-  { icon: <Smartphone />, text: "Z mobilu i počítače, kdykoli — stačí se přihlásit." },
+  { icon: <Smartphone />, text: "Z mobilu i z počítače, kdykoli. Stačí se přihlásit." },
   { icon: <Check />, text: "Cvičná zkouška nanečisto s hodnocením prošel / neprošel." },
 ];
 
@@ -50,9 +50,9 @@ export default function TestyPage() {
             Online procvičování testů
           </Heading>
           <p className="testy-hero__lead">
-            Testové otázky si projdete jako v autoškole — neomezeně, kdykoli,
-            z mobilu i počítače. Portál je určený přihlášeným kurzantům;
-            přihlašovací údaje dostanete e-mailem po zaplacení kurzu.
+            Testové otázky si projdete jako v autoškole: neomezeně, kdykoli,
+            z mobilu i z počítače. Portál je jen pro přihlášené kurzanty.
+            Přístupové údaje vám pošleme e-mailem po zaplacení kurzu.
           </p>
           <div className="testy-hero__cta">
             <Button
